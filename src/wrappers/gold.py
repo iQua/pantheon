@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from os import path
 from subprocess import check_call
 
@@ -10,9 +9,10 @@ def main():
 	cc_repo = path.join(context.third_party_dir, 'gold')
 	send_src = path.join(cc_repo, 'environment', 'learner.py')
 	recv_src = path.join(cc_repo, 'environment', 'run_receiver.py')
-	dependencies = path.join(cc_repo, 'dependencies.sh')
-	if args.option == 'setup':
-		check_call(dependencies)
+	#dependencies = path.join(cc_repo, 'dependencies.sh')
+	#if args.option == 'setup':
+		#check_call(['sudo pip install tensorflow'], shell = True)
+         #       return
 	if args.option == 'sender':
 		cmd = [send_src, args.port, "--test"]
 		check_call(cmd)
