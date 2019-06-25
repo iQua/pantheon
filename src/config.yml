@@ -69,5 +69,5 @@ schemes:
     marker: 'D'
   gold:
     name: GOLD
-    color: amber
-    marker: 's'
+    color: gold
+    marker: '+'
