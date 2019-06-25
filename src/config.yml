@@ -67,3 +67,7 @@ schemes:
     name: FillP-Sheep
     color: violet
     marker: 'D'
+  gold:
+    name: GOLD
+    color: amber
+    marker: 's'

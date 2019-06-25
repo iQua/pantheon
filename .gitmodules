@@ -54,3 +54,7 @@
 	path = third_party/fillp-sheep
 	url = https://github.com/fillthepipe/fillp-sheep.git
 	ignore = dirty
+[submodule "third_party/gold"]
+	path = third_party/gold
+	url = https://github.com/iQua/gold.git
+	ignore = dirty
