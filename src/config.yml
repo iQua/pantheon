@@ -71,3 +71,7 @@ schemes:
     name: GOLD
     color: gold
     marker: '+'
+  goldLSTM:
+    name: GoldLSTM
+    color: blue
+    marker: '+'
