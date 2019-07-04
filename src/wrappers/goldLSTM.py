@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from os import path
 from subprocess import check_call
+import subprocess
 
 import arg_parser
 import context
@@ -17,12 +18,12 @@ def main():
 
 	if args.option == 'sender':
             cmd = ['python3' , send_src, args.port]
-            check_call(cmd)
+            subprocess.check_output(cmd)
             return
 
 	if args.option == 'receiver':
             cmd = ['python3', recv_src, args.ip, args.port]
-            check_call(cmd)
+            subprocess.check_output(cmd)
             return
 
 if __name__ == "__main__":
