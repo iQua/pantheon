@@ -66,3 +66,7 @@
 	path = third_party/goldLSTM175
 	url = https://github.com/iQua/sender-receiver.git
 	ignore = dirty
+[submodule "third_party/goldLSTM175xtra"]
+	path = third_party/goldLSTM175xtra
+	url = https://github.com/iQua/sender-receiver.git
+	ignore = dirty
