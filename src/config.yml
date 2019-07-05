@@ -83,3 +83,7 @@ schemes:
     name: GoldLSTM175Xtra
     color: red
     marker: '*'
+  goldLSTM175xtraTrained:
+    name: GoldLSTM175XtraTrained
+    color: green
+    marker: '*'
