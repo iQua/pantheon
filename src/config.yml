@@ -75,15 +75,3 @@ schemes:
     name: GoldLSTM
     color: blue
     marker: '+'
-  goldLSTM175:
-    name: GoldLSTM175
-    color: indigo
-    marker: '*'
-  goldLSTM175xtra:
-    name: GoldLSTM175Xtra
-    color: red
-    marker: '*'
-  goldLSTM175xtraTrained:
-    name: GoldLSTM175XtraTrained
-    color: green
-    marker: '*'
