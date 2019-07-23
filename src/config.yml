@@ -75,3 +75,7 @@ schemes:
     name: GoldLSTM
     color: blue
     marker: '+'
+  goldIRL:
+    name : GOLDIRL
+    color: red
+    marker: '+'
