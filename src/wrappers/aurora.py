@@ -19,8 +19,8 @@ def main():
     recv_src = path.join(app_dir, 'pccserver')
 
     if args.option == 'setup':
-        cmd = ['git', 'checkout', 'deep-learning']
-        check_call(cmd)
+        #cmd = ['git', 'checkout', 'deep-learning']
+        #check_call(cmd)
         check_call(['make'], cwd=src_dir)
         return
 
@@ -32,8 +32,9 @@ def main():
 
     if args.option == 'sender':
         os.environ['LD_LIBRARY_PATH'] = path.join(lib_dir)
-        arguments = '--pcc-rate-control=python -pyhelper=loaded_client -pypath=/path/to/pcc-rl/src/udt-plugins/testing/ --history-len=10 --pcc-utility-calc=linear --model-path=/path/to/your/model/'
-        cmd = [send_src, 'send', args.ip, args.port, arguments]
+        arguments1 = '--pcc-rate-control=python -pyhelper=loaded_client --history-len=10 --pcc-utility-calc=linear '
+        arguments2 = '-pypath=%s/src/udt-plugins/testing/ --model-path=%s' % (cc_repo, '../cc_repo/')
+        cmd = [send_src, 'send', args.ip, args.port, arguments1, arguments2]
         check_call(cmd)
         return
 
