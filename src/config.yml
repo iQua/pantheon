@@ -79,3 +79,7 @@ schemes:
     name : GOLDIRL
     color: red
     marker: '+'
+  aurora:
+    name: Aurora
+    color: black
+    marker: '+'
