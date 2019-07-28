@@ -66,3 +66,11 @@
 	path = third_party/goldIRL
 	url = https://github.com/iQua/gold-IRL.git
 	ignore = dirty
+[submodule "third_party/aurora"]
+	path = third_party/aurora
+	url = https://github.com/PCCproject/PCC-Uspace.git
+	ignore = dirty
+[submodule "third_party/aurora-model"]
+	path = third_party/aurora-model
+	url = https://github.com/PCCproject/PCC-RL.git
+	ignore = dirty
