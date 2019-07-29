@@ -75,8 +75,8 @@ schemes:
     name: GoldLSTM
     color: blue
     marker: '+'
-  goldIRL:
-    name : GOLDIRL
+  eagle:
+    name : Eagle
     color: red
     marker: '+'
   aurora:
