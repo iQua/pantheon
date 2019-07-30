@@ -1,0 +1,16 @@
+{
+    "cc_schemes": [
+        "eagle"
+    ],
+    "downlink_trace": "120mbps.trace",
+    "flows": 2,
+    "git_summary": "branch: master @ 64e2190bb68765a056968e3c15fccdde5154ca92\nthird_party/aurora @ f3e943d61015b39960854ba6391797e0c7984d74\nthird_party/aurora-model @ e292c316c23fb837255c4e142e40590d154bbe95\nthird_party/eagle @ ce4c8d9511b8dfde83c08384f81b2617bfb10438\n M sender-receiver/sender-receiver/sender_receiver/envs/example-xentropy.py\nthird_party/fillp @ d6da1459332fcee56963885d7eba17e6a32d4519\nthird_party/fillp-sheep @ 0e5bb722943babcd2b090d2c64fcd45e12e923f9\nthird_party/genericCC @ d0153f8e594aa89e93b032143cedbdfe58e562f4\nthird_party/gold @ e47bed6d7495aa223eec8de2c7a43035967074ef\n M environment/__pycache__/datagram_pb2.cpython-36.opt-1.pyc\n M environment/__pycache__/datagram_pb2.cpython-36.pyc\n M environment/__pycache__/environment.cpython-36.opt-1.pyc\n M environment/__pycache__/helpers.cpython-36.opt-1.pyc\n M environment/__pycache__/helpers.cpython-36.pyc\n M environment/__pycache__/mahimahi.cpython-36.opt-1.pyc\n M environment/__pycache__/project_root.cpython-36.opt-1.pyc\n M environment/__pycache__/project_root.cpython-36.pyc\n M environment/__pycache__/receiver.cpython-36.opt-1.pyc\n M environment/__pycache__/receiver.cpython-36.pyc\n M environment/logs.txt\n M model\nthird_party/goldLSTM @ 6b512ee75b163fd680d7bf3cde4cf6d6aa7102c4\nthird_party/indigo @ 2601c92e4aa9d58d38dc4dfe0ecdbf90c077e64d\nthird_party/libutp @ b3465b942e2826f2b179eaab4a906ce6bb7cf3cf\nthird_party/pantheon-tunnel @ f866d3f58d27afd942717625ee3a354cc2e802bd\nthird_party/pcc @ 1afc958fa0d66d18b623c091a55fec872b4981e1\n M receiver/src/buffer.h\n M receiver/src/core.cpp\n M sender/src/buffer.h\n M sender/src/core.cpp\nthird_party/pcc-experimental @ cd43e34e3f5f5613e8acd08fab92c4eb24f974ab\nthird_party/proto-quic @ 77961f1a82733a86b42f1bc8143ebc978f3cff42\nthird_party/scream-reproduce @ f099118d1421aa3131bf11ff1964974e1da3bdb2\n M src/ScreamClient\n M src/ScreamServer\nthird_party/sprout @ 366e35c6178b01e31d4a46ad18c74f9415f19a26\n M src/examples/cellsim.cc\n M src/examples/sproutbt2.cc\n M src/network/sproutconn.cc\nthird_party/verus @ d4b447ea74c6c60a261149af2629562939f9a494\n M src/verus.hpp\n M tools/plot.py\nthird_party/vivace @ 2baf86211435ae071a32f96b7d8c504587f5d7f4\nthird_party/webrtc @ 3f0cc2a9061a41b6f9dde4735770d143a1fa2851\n",
+    "interval": 15,
+    "mode": "local",
+    "prepend_mm_cmds": "mm-delay 40",
+    "random_order": false,
+    "run_times": 1,
+    "runtime": 30,
+    "start_run_id": 1,
+    "uplink_trace": "120mbps.trace"
+}
