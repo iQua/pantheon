@@ -70,7 +70,3 @@
 	path = third_party/aurora-model
 	url = https://github.com/PCCproject/PCC-RL.git
 	ignore = dirty
-[submodule "third_party/eagle"]
-	path = third_party/eagle
-	url = https://github.com/iQua/gold-IRL.git
-	ignore = dirty
