@@ -131,6 +131,11 @@ src/wrappers/<cc>.py receiver IP port
 ```
 
 Run `src/wrappers/<cc>.py -h` for detailed usage.
+## To make sure BBR is the running Congestion control schemes
+
+1. `sudo vi /etc/sysctl.conf`
+2. Add `net.core.default_qdisc = fq` and `net.ipv4.tcp_congestion_control = bbr`
+3. Check by running `sysctl net.ipv4.tcp_congestion_control`
 
 ## How to add your own congestion control
 Adding your own congestion control to Pantheon is easy! Just follow these
