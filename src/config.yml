@@ -67,18 +67,22 @@ schemes:
     name: FillP-Sheep
     color: violet
     marker: 'D'
-  gold:
-    name: GOLD
+  eagle-v1:
+    name: Eagle-v1
     color: gold
     marker: '+'
-  goldLSTM:
-    name: GoldLSTM
+  eagle-v2:
+    name: Eagle-v2
     color: blue
     marker: '+'
-  eagle:
-    name : Eagle
+  eagle-v3:
+    name : Eagle-v3
     color: red
     marker: '+'
+  synthesizedBBR:
+    name : Synthesized-BBR
+    color: blue
+    marker: '*'
   aurora:
     name: Aurora
     color: black
