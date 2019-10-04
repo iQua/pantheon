@@ -54,14 +54,6 @@
 	path = third_party/fillp-sheep
 	url = https://github.com/fillthepipe/fillp-sheep.git
 	ignore = dirty
-[submodule "third_party/gold"]
-	path = third_party/gold
-	url = https://github.com/iQua/gold.git
-	ignore = dirty
-[submodule "third_party/goldLSTM"]
-	path = third_party/goldLSTM
-	url = https://github.com/iQua/sender-receiver.git
-	ignore = dirty
 [submodule "third_party/aurora"]
 	path = third_party/aurora
 	url = https://github.com/PCCproject/PCC-Uspace.git
@@ -70,10 +62,3 @@
 	path = third_party/aurora-model
 	url = https://github.com/PCCproject/PCC-RL.git
 	ignore = dirty
-[submodule "third_party/eagle"]
-	path = third_party/eagle
-	url = https://github.com/iQua/gold-IRL.git
-	ignore = dirty
-[submodule "third_party/synthesizedBBR"]
-	path = third_party/synthesizedBBR
-	url = https://github.com/iQua/gold-IRL.git
