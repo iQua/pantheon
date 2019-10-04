@@ -7,7 +7,7 @@ import context
 
 def main():
 	args = arg_parser.sender_first()
-	cc_repo = path.join(context.third_party_dir, 'gold')
+	cc_repo = path.join(context.third_party_dir, 'eagle-v1')
 	send_src = path.join(cc_repo, 'environment', 'learner.py')
 	recv_src = path.join(cc_repo, 'environment', 'run_receiver.py')
 	dependencies = path.join(cc_repo, 'dependencies.sh')

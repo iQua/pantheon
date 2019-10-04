@@ -8,7 +8,7 @@ import context
 
 def main():
         args = arg_parser.sender_first()
-        cc_repo = path.join(context.third_party_dir, 'eagle')
+        cc_repo = path.join(context.third_party_dir, 'eagle-v3')
         send_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'example-xentropy.py')
         recv_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'run_receiver.py')
         #dependencies = path.join(cc_repo, 'dependencies.sh')
