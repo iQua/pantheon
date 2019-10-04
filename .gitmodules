@@ -62,3 +62,18 @@
 	path = third_party/aurora-model
 	url = https://github.com/PCCproject/PCC-RL.git
 	ignore = dirty
+[submodule "third_party/eagle-v1"]
+	path = third_party/eagle-v1
+	url = https://github.com/iQua/gold.git
+	ignore = dirty
+[submodule "third_party/eagle-v2"]
+	path = third_party/eagle-v2
+	url = https://github.com/iQua/sender-receiver-old.git
+	ignore = dirty
+[submodule "third_party/eagle-v3"]
+	path = third_party/eagle-v3
+	url = https://github.com/iQua/gold-IRL.git
+	ignore = dirty
+[submodule "third_party/synthesizedBBR"]
+	path = third_party/synthesizedBBR
+	url = https://github.com/iQua/gold-IRL.git
