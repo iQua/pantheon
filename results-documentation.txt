@@ -1,3 +1,5 @@
+SynthesizedBBRVSBBR006LTE: testing synthesized BBR and others with 4 cpu cores in LTE env
+SynthesizedBBRVSBBR005: testing bbr, pcc, pcc vivace, aurora, synthesized bbr on 4 cpu core with 10mps
 SynthesizedBBRVSBBR004: testing bbr and synthesized BBR on 4 cpu core computer with 100mbps
 SynthesizedBBRVSBBR003: testing bbr and synthesized BBR on 4 cpu core computer with 10mbps
 SynthesizedBBRVSBBR002: testing bbr and synthesized BBR on 2 cpu core with 50mpbs
