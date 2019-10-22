@@ -1,0 +1,2337 @@
+[sender] Listening on port 37397
+[sender] Handshake success! Receiver's address is 100.64.0.5:32794
+
+Observations of 1 step 
+Step length was 90.01544397324324 ms 
+Sending rate updated to 0.1 
+EWMA Sending Rate during the last step is 0.12963212158035772 Mbps
+EWMA Delivery Rate during the last step is 0.017768303413713955 Mbps 
+Cwnd during the last step is 10.0 
+EWMA Queuing Delay during the last step is 0.0049253721954301 ms 
+RTT grad average during the last step is 0.00043773574649204854 
+EWMA Loss rate during the last step is 0.0 
+
+Observations of 2 step 
+Step length was 173.25401096604764 ms 
+Sending rate updated to 0.28900000000000003 
+EWMA Sending Rate during the last step is 0.4010223020798519 Mbps
+EWMA Delivery Rate during the last step is 0.1294400536943315 Mbps 
+Cwnd during the last step is 12.849217668313466 
+EWMA Queuing Delay during the last step is 0.1433953790110536 ms 
+RTT grad average during the last step is -0.005995006616611491 
+EWMA Loss rate during the last step is 0.0 
+Didn't exeprience delay before and delay is acceptable
+Not probing aggressively
+local reward now: 9.500000 
+
+Observations of 3 step 
+Step length was 171.17736098589376 ms 
+Sending rate updated to 0.8352100000000001 
+EWMA Sending Rate during the last step is 0.7976582039765971 Mbps
+EWMA Delivery Rate during the last step is 0.4653992789363812 Mbps 
+Cwnd during the last step is 92.91394116900783 
+EWMA Queuing Delay during the last step is 1.579198566205574 ms 
+RTT grad average during the last step is -0.002505781383469369 
+EWMA Loss rate during the last step is 0.0 
+Didn't exeprience delay before and delay is acceptable
+local reward now: 12.977406 
+
+Observations of 4 step 
+Step length was 170.31781503465027 ms 
+Sending rate updated to 2.4137569000000005 
+EWMA Sending Rate during the last step is 2.3757675703379 Mbps
+EWMA Delivery Rate during the last step is 1.7701733565088926 Mbps 
+Cwnd during the last step is 331.80180261521537 
+EWMA Queuing Delay during the last step is 2.415146915329501 ms 
+RTT grad average during the last step is -0.006069505930938796 
+EWMA Loss rate during the last step is 0.0 
+Didn't exeprience delay before and delay is acceptable
+local reward now: 14.017792 
+
+Observations of 5 step 
+Step length was 168.25004300335422 ms 
+Sending rate updated to 6.975757441000002 
+EWMA Sending Rate during the last step is 6.972549990182098 Mbps
+EWMA Delivery Rate during the last step is 3.781885543773279 Mbps 
+Cwnd during the last step is 1262.0275475574288 
+EWMA Queuing Delay during the last step is 22.203633716754094 ms 
+RTT grad average during the last step is 0.15112891241763066 
+EWMA Loss rate during the last step is 0.0 
+Experiencing delay for first time
+local reward now: -9.860297 
+
+Observations of 6 step 
+Step length was 219.10334698623046 ms 
+Sending rate updated to 2.4137569000000005 
+EWMA Sending Rate during the last step is 2.35339909451659 Mbps
+EWMA Delivery Rate during the last step is 4.003704593206966 Mbps 
+Cwnd during the last step is 38.65182860838028 
+EWMA Queuing Delay during the last step is 12.301918349003154 ms 
+RTT grad average during the last step is -0.11199344720616537 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 7 step 
+Step length was 169.7256219922565 ms 
+Sending rate updated to 1.9310055200000005 
+EWMA Sending Rate during the last step is 1.9707432835668945 Mbps
+EWMA Delivery Rate during the last step is 1.843486256572408 Mbps 
+Cwnd during the last step is 136.70341603806287 
+EWMA Queuing Delay during the last step is 2.3895557037291235 ms 
+RTT grad average during the last step is -0.00869507134498843 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 8 step 
+Step length was 166.99800500646234 ms 
+Sending rate updated to 1.9310055200000005 
+EWMA Sending Rate during the last step is 2.010139846676484 Mbps
+EWMA Delivery Rate during the last step is 1.9059684662569107 Mbps 
+Cwnd during the last step is 340.73433335202265 
+EWMA Queuing Delay during the last step is 2.2568497158138667 ms 
+RTT grad average during the last step is 0.007678714280442172 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.128425 
+
+Observations of 9 step 
+Step length was 169.5622460101731 ms 
+Sending rate updated to 1.9310055200000005 
+EWMA Sending Rate during the last step is 1.9944542335149826 Mbps
+EWMA Delivery Rate during the last step is 1.808480921316816 Mbps 
+Cwnd during the last step is 340.2030177786603 
+EWMA Queuing Delay during the last step is 2.3397209327916673 ms 
+RTT grad average during the last step is 0.00025693829792127273 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.169860 
+
+Observations of 10 step 
+Step length was 169.65007298858836 ms 
+Sending rate updated to 2.4137569000000005 
+EWMA Sending Rate during the last step is 2.4341146665181506 Mbps
+EWMA Delivery Rate during the last step is 2.177733183765205 Mbps 
+Cwnd during the last step is 850.5075444466507 
+EWMA Queuing Delay during the last step is 2.632655896535999 ms 
+RTT grad average during the last step is -0.0025904204639676546 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.590875 
+
+Observations of 11 step 
+Step length was 168.76890003914014 ms 
+Sending rate updated to 2.4137569000000005 
+EWMA Sending Rate during the last step is 2.471682862334273 Mbps
+EWMA Delivery Rate during the last step is 2.277267985081184 Mbps 
+Cwnd during the last step is 340.2030177786603 
+EWMA Queuing Delay during the last step is 3.162397761527613 ms 
+RTT grad average during the last step is 0.01562385606366015 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.581199 
+
+Observations of 12 step 
+Step length was 174.0420390269719 ms 
+Sending rate updated to 2.4137569000000005 
+EWMA Sending Rate during the last step is 2.4372642985944326 Mbps
+EWMA Delivery Rate during the last step is 2.335675303813911 Mbps 
+Cwnd during the last step is 340.2030177786603 
+EWMA Queuing Delay during the last step is 2.9314627701681735 ms 
+RTT grad average during the last step is -0.018083832070360004 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.465731 
+
+Observations of 13 step 
+Step length was 167.7521420060657 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0347764075518633 Mbps
+EWMA Delivery Rate during the last step is 2.6017906135655893 Mbps 
+Cwnd during the last step is 850.5075444466507 
+EWMA Queuing Delay during the last step is 2.446095782172391 ms 
+RTT grad average during the last step is 0.0016540534968694073 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.306745 
+
+Observations of 14 step 
+Step length was 168.3059200295247 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.059179865974454 Mbps
+EWMA Delivery Rate during the last step is 2.8881371271851703 Mbps 
+Cwnd during the last step is 339.79371930286675 
+EWMA Queuing Delay during the last step is 2.7717241993185215 ms 
+RTT grad average during the last step is 0.0018391150852350017 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.671149 
+
+Observations of 15 step 
+Step length was 168.92463702242821 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0676775662494267 Mbps
+EWMA Delivery Rate during the last step is 2.884744393254309 Mbps 
+Cwnd during the last step is 339.79371930286675 
+EWMA Queuing Delay during the last step is 2.6658089564995304 ms 
+RTT grad average during the last step is -0.0006165884180011263 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.332904 
+
+Observations of 16 step 
+Step length was 168.71639800956473 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.816248704509782 Mbps
+EWMA Delivery Rate during the last step is 3.3626023657105706 Mbps 
+Cwnd during the last step is 849.4842982571669 
+EWMA Queuing Delay during the last step is 2.456697822770404 ms 
+RTT grad average during the last step is -0.0038109871297612847 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.800198 
+
+Observations of 17 step 
+Step length was 167.42919100215659 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.785897234134964 Mbps
+EWMA Delivery Rate during the last step is 3.546815086501879 Mbps 
+Cwnd during the last step is 339.14135195595856 
+EWMA Queuing Delay during the last step is 2.3140835562297672 ms 
+RTT grad average during the last step is 0.011550871065723303 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.157042 
+
+Observations of 18 step 
+Step length was 171.29770101746544 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.813213572715545 Mbps
+EWMA Delivery Rate during the last step is 3.6210496966602497 Mbps 
+Cwnd during the last step is 338.15947101997125 
+EWMA Queuing Delay during the last step is 2.0367999773374077 ms 
+RTT grad average during the last step is -0.012437382209776263 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.018400 
+
+Observations of 19 step 
+Step length was 167.04263404244557 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.746433724125187 Mbps
+EWMA Delivery Rate during the last step is 4.093057576560725 Mbps 
+Cwnd during the last step is 842.6215802500612 
+EWMA Queuing Delay during the last step is 3.084632992533841 ms 
+RTT grad average during the last step is 0.007587745534926121 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.781122 
+
+Observations of 20 step 
+Step length was 169.57062197616324 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.714677981701012 Mbps
+EWMA Delivery Rate during the last step is 4.421556557454834 Mbps 
+Cwnd during the last step is 344.57074071526523 
+EWMA Queuing Delay during the last step is 3.605612175941344 ms 
+RTT grad average during the last step is 0.004233864298382424 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.802806 
+
+Observations of 21 step 
+Step length was 171.0071749985218 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.723063572388702 Mbps
+EWMA Delivery Rate during the last step is 4.462092880257088 Mbps 
+Cwnd during the last step is 372.225161659425 
+EWMA Queuing Delay during the last step is 3.4014954950832794 ms 
+RTT grad average during the last step is -0.00664024763514443 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.700748 
+
+Observations of 22 step 
+Step length was 168.7348480336368 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.908578060638906 Mbps
+EWMA Delivery Rate during the last step is 4.393307460566509 Mbps 
+Cwnd during the last step is 939.0941979995412 
+EWMA Queuing Delay during the last step is 16.456616255868973 ms 
+RTT grad average during the last step is 0.10138164823226126 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -11.596709 
+
+Observations of 23 step 
+Step length was 202.9490090208128 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.727628197599492 Mbps
+EWMA Delivery Rate during the last step is 4.755352326701634 Mbps 
+Cwnd during the last step is 150.2550716799266 
+EWMA Queuing Delay during the last step is 37.35951603226378 ms 
+RTT grad average during the last step is 0.08647656722488488 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 24 step 
+Step length was 237.84719302784652 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8057200496327788 Mbps
+EWMA Delivery Rate during the last step is 4.373023307357697 Mbps 
+Cwnd during the last step is 160.1301953783383 
+EWMA Queuing Delay during the last step is 11.274828636564266 ms 
+RTT grad average during the last step is -0.14775425755191987 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 25 step 
+Step length was 167.38946898840368 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0502529423842253 Mbps
+EWMA Delivery Rate during the last step is 3.5822695448086943 Mbps 
+Cwnd during the last step is 160.1301953783383 
+EWMA Queuing Delay during the last step is 2.7763389989593046 ms 
+RTT grad average during the last step is -0.0016961896753160297 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 26 step 
+Step length was 167.11536498041824 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0457327422456415 Mbps
+EWMA Delivery Rate during the last step is 2.86118650356261 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.871316559728144 ms 
+RTT grad average during the last step is 0.004854592630789546 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.435658 
+
+Observations of 27 step 
+Step length was 168.73952897731215 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0583373895663657 Mbps
+EWMA Delivery Rate during the last step is 2.8151201406940434 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.933339015853539 ms 
+RTT grad average during the last step is 0.0013338310354051297 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.466670 
+
+Observations of 28 step 
+Step length was 169.18698197696358 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.79074005886168 Mbps
+EWMA Delivery Rate during the last step is 3.4556112605297815 Mbps 
+Cwnd during the last step is 1000.8137211146143 
+EWMA Queuing Delay during the last step is 2.9741397450855067 ms 
+RTT grad average during the last step is 0.0008620697967972258 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.698958 
+
+Observations of 29 step 
+Step length was 169.48047501500696 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.80913846477683 Mbps
+EWMA Delivery Rate during the last step is 3.5402683279435117 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.8316498079705066 ms 
+RTT grad average during the last step is 0.0011749909006136547 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.415825 
+
+Observations of 30 step 
+Step length was 169.87995500676334 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.82325745183322 Mbps
+EWMA Delivery Rate during the last step is 3.555084358419389 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.5124154478653082 ms 
+RTT grad average during the last step is -0.00887989423817343 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.256208 
+
+Observations of 31 step 
+Step length was 166.86324396869168 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7218445696991616 Mbps
+EWMA Delivery Rate during the last step is 4.232438473033307 Mbps 
+Cwnd during the last step is 1000.8137211146143 
+EWMA Queuing Delay during the last step is 3.358424038495232 ms 
+RTT grad average during the last step is 0.01032685802857472 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.453113 
+
+Observations of 32 step 
+Step length was 170.3101940220222 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.738678978082621 Mbps
+EWMA Delivery Rate during the last step is 4.3344985898424655 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 3.2056197762949767 ms 
+RTT grad average during the last step is -0.004958141536244544 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.602810 
+
+Observations of 33 step 
+Step length was 168.61778602469712 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.738353487761211 Mbps
+EWMA Delivery Rate during the last step is 4.523149075131645 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.928915614601008 ms 
+RTT grad average during the last step is 0.010293688712732469 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.464458 
+
+Observations of 34 step 
+Step length was 172.0912890159525 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.902420408416495 Mbps
+EWMA Delivery Rate during the last step is 4.411688177439049 Mbps 
+Cwnd during the last step is 1000.8137211146143 
+EWMA Queuing Delay during the last step is 17.683196287220852 ms 
+RTT grad average during the last step is 0.09694262933253614 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -12.501449 
+
+Observations of 35 step 
+Step length was 205.45746700372547 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.721375735407752 Mbps
+EWMA Delivery Rate during the last step is 4.752960582430029 Mbps 
+Cwnd during the last step is 160.1301953783383 
+EWMA Queuing Delay during the last step is 37.85420230364466 ms 
+RTT grad average during the last step is 0.08007004003869124 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 36 step 
+Step length was 238.16731298575178 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8150618414611928 Mbps
+EWMA Delivery Rate during the last step is 4.628177010459884 Mbps 
+Cwnd during the last step is 160.1301953783383 
+EWMA Queuing Delay during the last step is 4.209262222466698 ms 
+RTT grad average during the last step is -0.1432480702493008 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 37 step 
+Step length was 169.77279196726158 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0609129962303467 Mbps
+EWMA Delivery Rate during the last step is 3.0069674704154825 Mbps 
+Cwnd during the last step is 160.1301953783383 
+EWMA Queuing Delay during the last step is 3.6837938020390926 ms 
+RTT grad average during the last step is -0.008787391828721526 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 38 step 
+Step length was 167.07147401757538 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0579718512309437 Mbps
+EWMA Delivery Rate during the last step is 2.819767371066931 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.8274856917196924 ms 
+RTT grad average during the last step is 0.01888819159882846 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.413743 
+
+Observations of 39 step 
+Step length was 173.38406096678227 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0456781425647845 Mbps
+EWMA Delivery Rate during the last step is 2.8447889001813937 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.9063847974700896 ms 
+RTT grad average during the last step is -0.01713775762738288 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.453192 
+
+Observations of 40 step 
+Step length was 167.45376196922734 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8067686697414755 Mbps
+EWMA Delivery Rate during the last step is 3.361456514786842 Mbps 
+Cwnd during the last step is 1000.8137211146143 
+EWMA Queuing Delay during the last step is 3.118737975638771 ms 
+RTT grad average during the last step is 0.007560063016155027 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.302548 
+
+Observations of 41 step 
+Step length was 169.97458803234622 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.779713265042568 Mbps
+EWMA Delivery Rate during the last step is 3.5022055421044787 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.953490947952309 ms 
+RTT grad average during the last step is -0.00373576433652076 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.476745 
+
+Observations of 42 step 
+Step length was 168.7017699587159 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.799627874926783 Mbps
+EWMA Delivery Rate during the last step is 3.525622908673614 Mbps 
+Cwnd during the last step is 400.32548844584574 
+EWMA Queuing Delay during the last step is 2.0838388269538926 ms 
+RTT grad average during the last step is -0.01217879932656023 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.041919 
+
+Observations of 43 step 
+Step length was 164.59372598910704 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.708973383183878 Mbps
+EWMA Delivery Rate during the last step is 4.192840257774623 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 2.205243748068786 ms 
+RTT grad average during the last step is 0.02115035658992126 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.312763 
+
+Observations of 44 step 
+Step length was 171.55725799966604 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.760847790224594 Mbps
+EWMA Delivery Rate during the last step is 4.231534043296527 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 5.298702447785089 ms 
+RTT grad average during the last step is 0.006148664637542862 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.662949 
+
+Observations of 45 step 
+Step length was 173.67342399666086 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7342738323874825 Mbps
+EWMA Delivery Rate during the last step is 4.333905358844373 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 5.797729843731771 ms 
+RTT grad average during the last step is 7.753045640225823e-05 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+getting a negative reward for increasing the gap between increases and decreases\mlocal reward now: 0.000000 
+
+Observations of 46 step 
+Step length was 173.69314102688804 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.795671902548401 Mbps
+EWMA Delivery Rate during the last step is 3.897497568907294 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 2.9678739589996086 ms 
+RTT grad average during the last step is -0.010774063986943066 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 47 step 
+Step length was 169.96012901654467 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8058296239010105 Mbps
+EWMA Delivery Rate during the last step is 3.561621614877265 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.4692669837483727 ms 
+RTT grad average during the last step is 0.005595100543114702 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.734633 
+
+Observations of 48 step 
+Step length was 171.8903859728016 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7987133484296507 Mbps
+EWMA Delivery Rate during the last step is 3.5859339625331734 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.3027897422386885 ms 
+RTT grad average during the last step is -0.011102627812966984 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.651395 
+
+Observations of 49 step 
+Step length was 168.03592897485942 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.741397768481656 Mbps
+EWMA Delivery Rate during the last step is 4.066431017789263 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 5.618297214787424 ms 
+RTT grad average during the last step is 0.016458110932091777 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.262833 
+
+Observations of 50 step 
+Step length was 173.5687080072239 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.800122740764935 Mbps
+EWMA Delivery Rate during the last step is 3.7819743179877965 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 3.4912510189630455 ms 
+RTT grad average during the last step is 0.0034912286545809414 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 51 step 
+Step length was 174.77798199979588 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8187680467982634 Mbps
+EWMA Delivery Rate during the last step is 3.5965189035113294 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 2.8016953856302926 ms 
+RTT grad average during the last step is -0.00845055544492468 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.400848 
+
+Observations of 52 step 
+Step length was 171.82446096558124 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8008244556258957 Mbps
+EWMA Delivery Rate during the last step is 3.5254465887906012 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.6479875254608354 ms 
+RTT grad average during the last step is -0.0009175004306906154 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.823994 
+
+Observations of 53 step 
+Step length was 171.507564955391 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.699522150779398 Mbps
+EWMA Delivery Rate during the last step is 4.380703805410161 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 2.1807155435788492 ms 
+RTT grad average during the last step is -0.0017614789141120653 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: 0.245239 
+
+Observations of 54 step 
+Step length was 170.9039339912124 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.746616915141984 Mbps
+EWMA Delivery Rate during the last step is 4.327785716328247 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 4.822270603344573 ms 
+RTT grad average during the last step is 0.0066093679659681125 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.435988 
+
+Observations of 55 step 
+Step length was 173.16291196038947 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.732809311303144 Mbps
+EWMA Delivery Rate during the last step is 4.499630029753774 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.0593814525407623 ms 
+RTT grad average during the last step is -0.011259703278194049 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 56 step 
+Step length was 169.2653019563295 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.920014629757908 Mbps
+EWMA Delivery Rate during the last step is 4.347288941654602 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 18.014195399415634 ms 
+RTT grad average during the last step is 0.10515962105606252 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -12.779219 
+
+Observations of 57 step 
+Step length was 204.8665140173398 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.740372871752142 Mbps
+EWMA Delivery Rate during the last step is 4.769435870658971 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 39.55159149243693 ms 
+RTT grad average during the last step is 0.0888825960949128 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 58 step 
+Step length was 241.0744219669141 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8260138117279503 Mbps
+EWMA Delivery Rate during the last step is 4.701089239523895 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 4.5573461404234505 ms 
+RTT grad average during the last step is -0.15242416890858532 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 59 step 
+Step length was 167.40255698096007 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.069890693200973 Mbps
+EWMA Delivery Rate during the last step is 3.037169844524802 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 2.766641984537411 ms 
+RTT grad average during the last step is -0.0034341838385815253 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+I increased as much as decreased and delay is low, so do nothing for 3 steps
+EWMA Queuing Delay during the last step is 5.797729843731771 ms 
+RTT grad average during the last step is 7.753045640225823e-05 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+getting a negative reward for increasing the gap between increases and decreases\mlocal reward now: 0.000000 
+
+Observations of 46 step 
+Step length was 173.69314102688804 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.795671902548401 Mbps
+EWMA Delivery Rate during the last step is 3.897497568907294 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 2.9678739589996086 ms 
+RTT grad average during the last step is -0.010774063986943066 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 47 step 
+Step length was 169.96012901654467 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8058296239010105 Mbps
+EWMA Delivery Rate during the last step is 3.561621614877265 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.4692669837483727 ms 
+RTT grad average during the last step is 0.005595100543114702 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.734633 
+
+Observations of 48 step 
+Step length was 171.8903859728016 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7987133484296507 Mbps
+EWMA Delivery Rate during the last step is 3.5859339625331734 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.3027897422386885 ms 
+RTT grad average during the last step is -0.011102627812966984 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.651395 
+
+Observations of 49 step 
+Step length was 168.03592897485942 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.741397768481656 Mbps
+EWMA Delivery Rate during the last step is 4.066431017789263 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 5.618297214787424 ms 
+RTT grad average during the last step is 0.016458110932091777 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.262833 
+
+Observations of 50 step 
+Step length was 173.5687080072239 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.800122740764935 Mbps
+EWMA Delivery Rate during the last step is 3.7819743179877965 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 3.4912510189630455 ms 
+RTT grad average during the last step is 0.0034912286545809414 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 51 step 
+Step length was 174.77798199979588 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8187680467982634 Mbps
+EWMA Delivery Rate during the last step is 3.5965189035113294 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 2.8016953856302926 ms 
+RTT grad average during the last step is -0.00845055544492468 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.400848 
+
+Observations of 52 step 
+Step length was 171.82446096558124 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8008244556258957 Mbps
+EWMA Delivery Rate during the last step is 3.5254465887906012 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.6479875254608354 ms 
+RTT grad average during the last step is -0.0009175004306906154 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.823994 
+
+Observations of 53 step 
+Step length was 171.507564955391 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.699522150779398 Mbps
+EWMA Delivery Rate during the last step is 4.380703805410161 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 2.1807155435788492 ms 
+RTT grad average during the last step is -0.0017614789141120653 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: 0.245239 
+
+Observations of 54 step 
+Step length was 170.9039339912124 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.746616915141984 Mbps
+EWMA Delivery Rate during the last step is 4.327785716328247 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 4.822270603344573 ms 
+RTT grad average during the last step is 0.0066093679659681125 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.435988 
+
+Observations of 55 step 
+Step length was 173.16291196038947 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.732809311303144 Mbps
+EWMA Delivery Rate during the last step is 4.499630029753774 Mbps 
+Cwnd during the last step is 400.26345883087345 
+EWMA Queuing Delay during the last step is 3.0593814525407623 ms 
+RTT grad average during the last step is -0.011259703278194049 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 56 step 
+Step length was 169.2653019563295 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.920014629757908 Mbps
+EWMA Delivery Rate during the last step is 4.347288941654602 Mbps 
+Cwnd during the last step is 1000.6586470771836 
+EWMA Queuing Delay during the last step is 18.014195399415634 ms 
+RTT grad average during the last step is 0.10515962105606252 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -12.779219 
+
+Observations of 57 step 
+Step length was 204.8665140173398 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.740372871752142 Mbps
+EWMA Delivery Rate during the last step is 4.769435870658971 Mbps 
+Cwnd during the last step is 160.10538353234938 
+EWMA Queuing Delay during the last step is 39.55159149243693 ms 
+RTT grad average during the last step is 0.0888825960949128 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 58 step 
+Step length was 241.0744219669141 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8260138117279503 Mbps
+EWMA Delivery Rate during the last step is 4.701089239523895 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 4.5573461404234505 ms 
+RTT grad average during the last step is -0.15242416890858532 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 59 step 
+Step length was 167.40255698096007 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.069890693200973 Mbps
+EWMA Delivery Rate during the last step is 3.037169844524802 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 2.766641984537411 ms 
+RTT grad average during the last step is -0.0034341838385815253 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 60 step 
+Step length was 166.56522400444373 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0611573415789657 Mbps
+EWMA Delivery Rate during the last step is 2.843199476722937 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 3.200839476028838 ms 
+RTT grad average during the last step is 0.01626220608316335 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a decrease in probe BW
+local reward now: -10.000000 
+
+Observations of 61 step 
+Step length was 171.97507101809606 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0653377776718305 Mbps
+EWMA Delivery Rate during the last step is 2.888093315754428 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 3.0879569290997466 ms 
+RTT grad average during the last step is -0.009223825278273637 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.543978 
+
+Observations of 62 step 
+Step length was 168.80339401541278 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.794371094191571 Mbps
+EWMA Delivery Rate during the last step is 3.365960163896427 Mbps 
+Cwnd during the last step is 1003.6222171923292 
+EWMA Queuing Delay during the last step is 3.1084198823364733 ms 
+RTT grad average during the last step is 0.004466088935316933 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.453810 
+
+Observations of 63 step 
+Step length was 170.3128750086762 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.813928282437911 Mbps
+EWMA Delivery Rate during the last step is 3.5672810429164055 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.536124558088989 ms 
+RTT grad average during the last step is 0.0017729431122940288 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.268062 
+
+Observations of 64 step 
+Step length was 170.91658397112042 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8103697631635858 Mbps
+EWMA Delivery Rate during the last step is 3.6535432867546733 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.477185255115871 ms 
+RTT grad average during the last step is -0.011371313284328445 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.238593 
+
+Observations of 65 step 
+Step length was 167.03514201799408 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.720778452778111 Mbps
+EWMA Delivery Rate during the last step is 4.085654056111888 Mbps 
+Cwnd during the last step is 1003.6222171923292 
+EWMA Queuing Delay during the last step is 6.162756118857578 ms 
+RTT grad average during the last step is 0.023455034381120995 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.722571 
+
+Observations of 66 step 
+Step length was 174.86360698239878 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8166541678887382 Mbps
+EWMA Delivery Rate during the last step is 3.791789131449668 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 2.7777148322613026 ms 
+RTT grad average during the last step is -0.025997742454150995 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 67 step 
+Step length was 165.77333002351224 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.810580214330788 Mbps
+EWMA Delivery Rate during the last step is 3.554160513948072 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.6697651440591343 ms 
+RTT grad average during the last step is 0.007791868633805866 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.334883 
+
+Observations of 68 step 
+Step length was 168.3568999869749 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.80490729628106 Mbps
+EWMA Delivery Rate during the last step is 3.52431346241887 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.734180728203455 ms 
+RTT grad average during the last step is 0.014850523099193436 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.367090 
+
+Observations of 69 step 
+Step length was 173.38992899749428 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.77075098383767 Mbps
+EWMA Delivery Rate during the last step is 4.4750774349072575 Mbps 
+Cwnd during the last step is 1003.6222171923292 
+EWMA Queuing Delay during the last step is 2.198496687493898 ms 
+RTT grad average during the last step is -0.018119322525608123 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: 0.499231 
+
+Observations of 70 step 
+Step length was 167.0718400273472 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.71617596966362 Mbps
+EWMA Delivery Rate during the last step is 4.524990578689483 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.862649678553395 ms 
+RTT grad average during the last step is 0.012363298644402231 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.431325 
+
+Observations of 71 step 
+Step length was 171.20259901275858 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.774670923366087 Mbps
+EWMA Delivery Rate during the last step is 4.561333534232684 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.3770314187617063 ms 
+RTT grad average during the last step is -0.006005306137295566 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.188516 
+
+Observations of 72 step 
+Step length was 169.15015398990363 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.884029076117619 Mbps
+EWMA Delivery Rate during the last step is 4.4911216711101964 Mbps 
+Cwnd during the last step is 1003.6222171923292 
+EWMA Queuing Delay during the last step is 15.328389809557997 ms 
+RTT grad average during the last step is 0.09350703270788346 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -10.806837 
+
+Observations of 73 step 
+Step length was 200.78152196947485 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.726612045577825 Mbps
+EWMA Delivery Rate during the last step is 4.761583838859648 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 34.8202337612159 ms 
+RTT grad average during the last step is 0.0798111743592956 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 74 step 
+Step length was 232.64436202589422 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.792891543657841 Mbps
+EWMA Delivery Rate during the last step is 4.456044557535831 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 4.643580626429666 ms 
+RTT grad average during the last step is -0.13475790074157046 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 75 step 
+Step length was 169.7828290052712 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.092686264529702 Mbps
+EWMA Delivery Rate during the last step is 3.029662128145915 Mbps 
+Cwnd during the last step is 160.57955475077267 
+EWMA Queuing Delay during the last step is 2.6628647351526196 ms 
+RTT grad average during the last step is -0.0010081756403236693 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 76 step 
+Step length was 169.71097799250856 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.046935886969306 Mbps
+EWMA Delivery Rate during the last step is 2.752324574250002 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 3.6315175058687013 ms 
+RTT grad average during the last step is -0.004138600778300092 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.815759 
+
+Observations of 77 step 
+Step length was 168.31408499274403 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0482961635107753 Mbps
+EWMA Delivery Rate during the last step is 2.8279324557525003 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.5550330962614645 ms 
+RTT grad average during the last step is -0.00027190249124962553 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.277517 
+
+Observations of 78 step 
+Step length was 168.21108700241894 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7970158782929593 Mbps
+EWMA Delivery Rate during the last step is 3.3847422666861307 Mbps 
+Cwnd during the last step is 1003.6222171923292 
+EWMA Queuing Delay during the last step is 2.8755957848472096 ms 
+RTT grad average during the last step is -0.00012061006452710585 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.906631 
+
+Observations of 79 step 
+Step length was 168.17798104602844 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8025915952318217 Mbps
+EWMA Delivery Rate during the last step is 3.6000155667038483 Mbps 
+Cwnd during the last step is 401.4488868769317 
+EWMA Queuing Delay during the last step is 2.1477205133890904 ms 
+RTT grad average during the last step is -0.010235697853514024 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.073860 
+
+Observations of 80 step 
+Step length was 164.7299739997834 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.820841373620233 Mbps
+EWMA Delivery Rate during the last step is 3.534914861726995 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.8312940867202343 ms 
+RTT grad average during the last step is 0.007889571954525337 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.415647 
+
+Observations of 81 step 
+Step length was 167.3296780209057 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.758479329694304 Mbps
+EWMA Delivery Rate during the last step is 4.320392329111303 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.4438649495216174 ms 
+RTT grad average during the last step is 0.005051130128296335 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.221810 
+
+Observations of 82 step 
+Step length was 169.0206170314923 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.737688253777539 Mbps
+EWMA Delivery Rate during the last step is 4.405852983038977 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 5.402106220523026 ms 
+RTT grad average during the last step is 0.01574710862868462 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.682571 
+
+Observations of 83 step 
+Step length was 174.34318596497178 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.749478328848972 Mbps
+EWMA Delivery Rate during the last step is 4.595191631239364 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.822201936982724 ms 
+RTT grad average during the last step is -0.01759403438374876 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 84 step 
+Step length was 168.2093350100331 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.90613713010938 Mbps
+EWMA Delivery Rate during the last step is 4.3781580207712665 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 16.045541246709515 ms 
+RTT grad average during the last step is 0.09939030443281023 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -11.468032 
+
+Observations of 85 step 
+Step length was 201.64340100018308 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.731063278078765 Mbps
+EWMA Delivery Rate during the last step is 4.756693946089082 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 37.172714964456674 ms 
+RTT grad average during the last step is 0.0895713234208901 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 86 step 
+Step length was 237.57099703652784 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8124907740646083 Mbps
+EWMA Delivery Rate during the last step is 4.5618799477663545 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 4.201358028639274 ms 
+RTT grad average during the last step is -0.14532798236417527 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 87 step 
+Step length was 168.33933402085677 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.087257397583386 Mbps
+EWMA Delivery Rate during the last step is 3.178028430499341 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 2.51912089260859 ms 
+RTT grad average during the last step is 0.003218225977093827 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 88 step 
+Step length was 169.71904801903293 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.050575995504544 Mbps
+EWMA Delivery Rate during the last step is 2.8910654138623757 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.867245961515166 ms 
+RTT grad average during the last step is -0.006648717483113321 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.433623 
+
+Observations of 89 step 
+Step length was 167.4553049961105 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0724000610860163 Mbps
+EWMA Delivery Rate during the last step is 2.754580952717437 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.9473234730783657 ms 
+RTT grad average during the last step is 0.007742107518734606 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.473662 
+
+Observations of 90 step 
+Step length was 170.0475550023839 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.802151161487949 Mbps
+EWMA Delivery Rate during the last step is 3.44875528178535 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 3.422243479478519 ms 
+RTT grad average during the last step is 0.0013927870144902533 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.902171 
+
+Observations of 91 step 
+Step length was 170.5212329979986 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7916800031482607 Mbps
+EWMA Delivery Rate during the last step is 3.5537218385597704 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.2625532882731023 ms 
+RTT grad average during the last step is -0.004563443500122509 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.631277 
+
+Observations of 92 step 
+Step length was 168.96900004940107 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.806201830599334 Mbps
+EWMA Delivery Rate during the last step is 3.6082198533591434 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.311756208377027 ms 
+RTT grad average during the last step is 0.002615107090068278 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.155878 
+
+Observations of 93 step 
+Step length was 169.84890797175467 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.776065175847791 Mbps
+EWMA Delivery Rate during the last step is 4.3481940648989585 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.525368045747087 ms 
+RTT grad average during the last step is -0.0076061661133881835 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.474567 
+
+Observations of 94 step 
+Step length was 167.26391797419637 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.753125830162141 Mbps
+EWMA Delivery Rate during the last step is 4.435719605822186 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.5901494667318197 ms 
+RTT grad average during the last step is 0.007563125380008283 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.295075 
+
+Observations of 95 step 
+Step length was 169.7971600224264 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7387280806628995 Mbps
+EWMA Delivery Rate during the last step is 4.499034951068208 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.9635210586804597 ms 
+RTT grad average during the last step is -0.002474340368107229 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.481761 
+
+Observations of 96 step 
+Step length was 168.95511996699497 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.908118484879467 Mbps
+EWMA Delivery Rate during the last step is 4.421309552834129 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 14.866209250521619 ms 
+RTT grad average during the last step is 0.0932706506813179 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -10.492727 
+
+Observations of 97 step 
+Step length was 200.47334901755676 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.717160275337019 Mbps
+EWMA Delivery Rate during the last step is 4.763496729454871 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 35.49210483205227 ms 
+RTT grad average during the last step is 0.08255668254024597 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 98 step 
+Step length was 233.3862099912949 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7857915630468915 Mbps
+EWMA Delivery Rate during the last step is 4.552613789590371 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 4.170535746663661 ms 
+RTT grad average during the last step is -0.13403277473783504 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 99 step 
+Step length was 170.66316300770268 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.063040415481769 Mbps
+EWMA Delivery Rate during the last step is 3.060910020914924 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.294930365096364 ms 
+RTT grad average during the last step is -0.009099730234649198 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 100 step 
+Step length was 167.81992302276194 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.0487180904848414 Mbps
+EWMA Delivery Rate during the last step is 2.935959115679898 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.0172993340522516 ms 
+RTT grad average during the last step is -0.004952534843239039 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.508650 
+
+Observations of 101 step 
+Step length was 166.16147302556783 ms 
+Sending rate updated to 3.017196125000001 
+EWMA Sending Rate during the last step is 3.049763076379371 Mbps
+EWMA Delivery Rate during the last step is 2.8380189551416706 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.3138684259954223 ms 
+RTT grad average during the last step is 0.01596427837045791 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.656934 
+
+Observations of 102 step 
+Step length was 171.46261601010337 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.789792067352001 Mbps
+EWMA Delivery Rate during the last step is 3.3133459006050776 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.969540952254909 ms 
+RTT grad average during the last step is -0.019943151955064554 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.294686 
+
+Observations of 103 step 
+Step length was 164.62346096523106 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.80524803988367 Mbps
+EWMA Delivery Rate during the last step is 3.6226595851699446 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.3812127059617536 ms 
+RTT grad average during the last step is 0.00836830907723087 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.190606 
+
+Observations of 104 step 
+Step length was 167.37830999772996 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.798211072941732 Mbps
+EWMA Delivery Rate during the last step is 3.544184799399633 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.3943638122735846 ms 
+RTT grad average during the last step is 0.014057681467110216 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.697182 
+
+Observations of 105 step 
+Step length was 172.10811999393627 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.75188718775375 Mbps
+EWMA Delivery Rate during the last step is 4.419864042866045 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.65104134590345 ms 
+RTT grad average during the last step is -0.014322322512785023 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.180292 
+
+Observations of 106 step 
+Step length was 167.15509200002998 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.765868804735359 Mbps
+EWMA Delivery Rate during the last step is 4.520415485406259 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.767382817745891 ms 
+RTT grad average during the last step is 0.0005304894568724308 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.383691 
+
+Observations of 107 step 
+Step length was 167.33278497122228 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.709279038023703 Mbps
+EWMA Delivery Rate during the last step is 4.2503984779887585 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 6.622273376502949 ms 
+RTT grad average during the last step is 0.02440495461207517 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -4.934255 
+
+Observations of 108 step 
+Step length was 175.507262989413 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.762500852050767 Mbps
+EWMA Delivery Rate during the last step is 4.5725861377156765 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 5.234983101692409 ms 
+RTT grad average during the last step is -0.0067851895030629225 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+getting a negative reward for increasing the gap between increases and decreases\mlocal reward now: 0.000000 
+
+Observations of 109 step 
+Step length was 173.1251190067269 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.813074096056871 Mbps
+EWMA Delivery Rate during the last step is 3.8229433358863254 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.0762771559453626 ms 
+RTT grad average during the last step is -0.018970857664761885 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 110 step 
+Step length was 166.54940199805424 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.778546174801348 Mbps
+EWMA Delivery Rate during the last step is 3.5793850089503505 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.5630282853626962 ms 
+RTT grad average during the last step is 0.0163261708560476 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.781514 
+
+Observations of 111 step 
+Step length was 171.9874229747802 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.808062493143966 Mbps
+EWMA Delivery Rate during the last step is 3.6179536475631773 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.728050470926883 ms 
+RTT grad average during the last step is -0.001628572616829447 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.364025 
+
+Observations of 112 step 
+Step length was 171.4280290179886 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.756436386464114 Mbps
+EWMA Delivery Rate during the last step is 4.196592260734066 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 5.049651994787599 ms 
+RTT grad average during the last step is 0.006125515259634281 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -2.735080 
+
+Observations of 113 step 
+Step length was 173.53516502771527 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8257901448514917 Mbps
+EWMA Delivery Rate during the last step is 3.9402330451559093 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 2.519999566887645 ms 
+RTT grad average during the last step is -0.013285820111338291 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 114 step 
+Step length was 168.92234899569303 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8047897016231786 Mbps
+EWMA Delivery Rate during the last step is 3.620947367460349 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.3452496425919653 ms 
+RTT grad average during the last step is -0.00032552834335322194 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.172625 
+
+Observations of 115 step 
+Step length was 168.8060779706575 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8236431456309377 Mbps
+EWMA Delivery Rate during the last step is 3.6366197944345147 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.5742765801634384 ms 
+RTT grad average during the last step is -0.006342472952886802 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.287138 
+
+Observations of 116 step 
+Step length was 166.66614601854235 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7555971723875485 Mbps
+EWMA Delivery Rate during the last step is 4.078376879205097 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 5.108802160838617 ms 
+RTT grad average during the last step is 0.020117528711651154 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -2.968788 
+
+Observations of 117 step 
+Step length was 173.37052198126912 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8103811893686452 Mbps
+EWMA Delivery Rate during the last step is 3.7407595039171397 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.069711842549197 ms 
+RTT grad average during the last step is -0.02054263278480182 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 118 step 
+Step length was 166.25026799738407 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.778747640770853 Mbps
+EWMA Delivery Rate during the last step is 3.4377665798331885 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 4.593168129727182 ms 
+RTT grad average during the last step is 0.018427729490312877 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.620206 
+There is nothing to be done, we need to wait to drain the queue
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.3943638122735846 ms 
+RTT grad average during the last step is 0.014057681467110216 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.697182 
+
+Observations of 105 step 
+Step length was 172.10811999393627 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.75188718775375 Mbps
+EWMA Delivery Rate during the last step is 4.419864042866045 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.65104134590345 ms 
+RTT grad average during the last step is -0.014322322512785023 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.180292 
+
+Observations of 106 step 
+Step length was 167.15509200002998 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.765868804735359 Mbps
+EWMA Delivery Rate during the last step is 4.520415485406259 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.767382817745891 ms 
+RTT grad average during the last step is 0.0005304894568724308 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.383691 
+
+Observations of 107 step 
+Step length was 167.33278497122228 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.709279038023703 Mbps
+EWMA Delivery Rate during the last step is 4.2503984779887585 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 6.622273376502949 ms 
+RTT grad average during the last step is 0.02440495461207517 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -4.934255 
+
+Observations of 108 step 
+Step length was 175.507262989413 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.762500852050767 Mbps
+EWMA Delivery Rate during the last step is 4.5725861377156765 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 5.234983101692409 ms 
+RTT grad average during the last step is -0.0067851895030629225 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+getting a negative reward for increasing the gap between increases and decreases\mlocal reward now: 0.000000 
+
+Observations of 109 step 
+Step length was 173.1251190067269 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.813074096056871 Mbps
+EWMA Delivery Rate during the last step is 3.8229433358863254 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.0762771559453626 ms 
+RTT grad average during the last step is -0.018970857664761885 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 110 step 
+Step length was 166.54940199805424 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.778546174801348 Mbps
+EWMA Delivery Rate during the last step is 3.5793850089503505 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.5630282853626962 ms 
+RTT grad average during the last step is 0.0163261708560476 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.781514 
+
+Observations of 111 step 
+Step length was 171.9874229747802 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.808062493143966 Mbps
+EWMA Delivery Rate during the last step is 3.6179536475631773 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.728050470926883 ms 
+RTT grad average during the last step is -0.001628572616829447 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.364025 
+
+Observations of 112 step 
+Step length was 171.4280290179886 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.756436386464114 Mbps
+EWMA Delivery Rate during the last step is 4.196592260734066 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 5.049651994787599 ms 
+RTT grad average during the last step is 0.006125515259634281 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -2.735080 
+
+Observations of 113 step 
+Step length was 173.53516502771527 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8257901448514917 Mbps
+EWMA Delivery Rate during the last step is 3.9402330451559093 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 2.519999566887645 ms 
+RTT grad average during the last step is -0.013285820111338291 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 114 step 
+Step length was 168.92234899569303 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8047897016231786 Mbps
+EWMA Delivery Rate during the last step is 3.620947367460349 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.3452496425919653 ms 
+RTT grad average during the last step is -0.00032552834335322194 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.172625 
+
+Observations of 115 step 
+Step length was 168.8060779706575 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8236431456309377 Mbps
+EWMA Delivery Rate during the last step is 3.6366197944345147 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.5742765801634384 ms 
+RTT grad average during the last step is -0.006342472952886802 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.287138 
+
+Observations of 116 step 
+Step length was 166.66614601854235 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7555971723875485 Mbps
+EWMA Delivery Rate during the last step is 4.078376879205097 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 5.108802160838617 ms 
+RTT grad average during the last step is 0.020117528711651154 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -2.968788 
+
+Observations of 117 step 
+Step length was 173.37052198126912 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8103811893686452 Mbps
+EWMA Delivery Rate during the last step is 3.7407595039171397 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.069711842549197 ms 
+RTT grad average during the last step is -0.02054263278480182 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 118 step 
+Step length was 166.25026799738407 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.778747640770853 Mbps
+EWMA Delivery Rate during the last step is 3.4377665798331885 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 4.593168129727182 ms 
+RTT grad average during the last step is 0.018427729490312877 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.620206 
+
+Observations of 119 step 
+Step length was 172.38142300629988 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8146506510742064 Mbps
+EWMA Delivery Rate during the last step is 3.677128213920116 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.2883771606933334 ms 
+RTT grad average during the last step is -0.014727016114886835 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 120 step 
+Step length was 167.2977489652112 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.74508905943124 Mbps
+EWMA Delivery Rate during the last step is 4.195792527199187 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 5.314702388088305 ms 
+RTT grad average during the last step is 0.020170510559679437 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.015034 
+
+Observations of 121 step 
+Step length was 174.0481359884143 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.80916178111219 Mbps
+EWMA Delivery Rate during the last step is 3.825817903619778 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 2.9420567468861796 ms 
+RTT grad average during the last step is -0.01491927502163482 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 122 step 
+Step length was 168.85672602802515 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8007370579691875 Mbps
+EWMA Delivery Rate during the last step is 3.5322393440604323 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.4294029112108206 ms 
+RTT grad average during the last step is -0.00345777753510978 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.214701 
+
+Observations of 123 step 
+Step length was 167.68660000525415 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8031267335066063 Mbps
+EWMA Delivery Rate during the last step is 3.5181398592205317 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.4545309933018253 ms 
+RTT grad average during the last step is -0.0019732762845915074 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.227265 
+
+Observations of 124 step 
+Step length was 167.03043598681688 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.727603914466315 Mbps
+EWMA Delivery Rate during the last step is 4.304510418228713 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 3.7251800468877723 ms 
+RTT grad average during the last step is 0.0034602615374231594 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.489992 
+
+Observations of 125 step 
+Step length was 168.18042402155697 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.733538932491938 Mbps
+EWMA Delivery Rate during the last step is 4.285117148636343 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 5.758256529386778 ms 
+RTT grad average during the last step is 0.018317839569212287 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -4.053306 
+
+Observations of 126 step 
+Step length was 174.34540897374973 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.750325251486124 Mbps
+EWMA Delivery Rate during the last step is 4.4800670522212895 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 4.416015263058737 ms 
+RTT grad average during the last step is -0.007086799698357455 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+getting a negative reward for increasing the gap between increases and decreases\mlocal reward now: 0.000000 
+
+Observations of 127 step 
+Step length was 171.87235096935183 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.794623060724131 Mbps
+EWMA Delivery Rate during the last step is 3.7159860564457667 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 3.2996029867941132 ms 
+RTT grad average during the last step is -0.012864873265807712 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 128 step 
+Step length was 167.45316702872515 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.7937251267437855 Mbps
+EWMA Delivery Rate during the last step is 3.4490703596196273 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.0230241438166487 ms 
+RTT grad average during the last step is -0.0008315460147881216 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.511512 
+
+Observations of 129 step 
+Step length was 167.1729109948501 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.804430994910916 Mbps
+EWMA Delivery Rate during the last step is 3.552424756391945 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 2.915391822804665 ms 
+RTT grad average during the last step is 0.006910162456601603 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.457696 
+
+Observations of 130 step 
+Step length was 169.48081902228296 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.718789252988326 Mbps
+EWMA Delivery Rate during the last step is 4.1289224055103 Mbps 
+Cwnd during the last step is 1003.5506365319061 
+EWMA Queuing Delay during the last step is 4.055845873972998 ms 
+RTT grad average during the last step is 0.0027741488456938784 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -2.027678 
+
+Observations of 131 step 
+Step length was 170.42153101647273 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.82476282285251 Mbps
+EWMA Delivery Rate during the last step is 3.7161443201794024 Mbps 
+Cwnd during the last step is 160.568101845105 
+EWMA Queuing Delay during the last step is 2.678240902046997 ms 
+RTT grad average during the last step is 0.007297323236146138 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 132 step 
+Step length was 172.90908901486546 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.819188590433843 Mbps
+EWMA Delivery Rate during the last step is 3.573324064190975 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 3.1232504539924273 ms 
+RTT grad average during the last step is -0.016096094335593853 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.561625 
+
+Observations of 133 step 
+Step length was 167.34223603270948 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8043863874890227 Mbps
+EWMA Delivery Rate during the last step is 3.6554386852242886 Mbps 
+Cwnd during the last step is 401.42025461276245 
+EWMA Queuing Delay during the last step is 1.9314973560433253 ms 
+RTT grad average during the last step is -0.00804671918047558 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -0.965749 
+
+Observations of 134 step 
+Step length was 164.65250798501074 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.763876640950792 Mbps
+EWMA Delivery Rate during the last step is 4.251160040602813 Mbps 
+Cwnd during the last step is 1000.972480325126 
+EWMA Queuing Delay during the last step is 2.2010545936684576 ms 
+RTT grad average during the last step is 0.007887313834355479 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -0.571370 
+
+Observations of 135 step 
+Step length was 167.24550898652524 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.729459462541531 Mbps
+EWMA Delivery Rate during the last step is 4.529120957168606 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 3.097236486331214 ms 
+RTT grad average during the last step is 0.0028719516540281673 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.548618 
+
+Observations of 136 step 
+Step length was 168.22891600895673 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7410421788512025 Mbps
+EWMA Delivery Rate during the last step is 4.449096052251024 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 3.1354665716120595 ms 
+RTT grad average during the last step is 0.0034277755855622715 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.567733 
+
+Observations of 137 step 
+Step length was 169.3618159624748 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.937379871419228 Mbps
+EWMA Delivery Rate during the last step is 4.585972466989983 Mbps 
+Cwnd during the last step is 1000.972480325126 
+EWMA Queuing Delay during the last step is 14.780392394123002 ms 
+RTT grad average during the last step is 0.0889958336784006 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -10.192450 
+
+Observations of 138 step 
+Step length was 199.51387896435335 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.7248251669003 Mbps
+EWMA Delivery Rate during the last step is 4.752527420771029 Mbps 
+Cwnd during the last step is 160.15559685202015 
+EWMA Queuing Delay during the last step is 35.25206759626108 ms 
+RTT grad average during the last step is 0.08494120783200833 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 139 step 
+Step length was 233.22117899078876 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8211011031673996 Mbps
+EWMA Delivery Rate during the last step is 4.4737037005335 Mbps 
+Cwnd during the last step is 160.15559685202015 
+EWMA Queuing Delay during the last step is 3.954656640856274 ms 
+RTT grad average during the last step is -0.14230426643807648 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 140 step 
+Step length was 166.67690395843238 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8153788958618216 Mbps
+EWMA Delivery Rate during the last step is 3.569941771735726 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 2.6226827580517376 ms 
+RTT grad average during the last step is 0.006152854282980831 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.311341 
+
+Observations of 141 step 
+Step length was 169.0098469844088 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.8100895576874456 Mbps
+EWMA Delivery Rate during the last step is 3.590681924537866 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 2.7205240676540896 ms 
+RTT grad average during the last step is 0.0013438330951833894 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.360262 
+
+Observations of 142 step 
+Step length was 169.46621402166784 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.721107268440148 Mbps
+EWMA Delivery Rate during the last step is 4.256745633540291 Mbps 
+Cwnd during the last step is 1000.972480325126 
+EWMA Queuing Delay during the last step is 3.35293795993336 ms 
+RTT grad average during the last step is 0.007371663821579888 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+There is a positive change in delivery rate
+local reward now: -1.497960 
+
+Observations of 143 step 
+Step length was 171.965024957899 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.743252819812749 Mbps
+EWMA Delivery Rate during the last step is 4.485715744203236 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 3.2107978120215788 ms 
+RTT grad average during the last step is -0.0045518557965902595 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+Last step was a do nothing
+local reward now: -1.605399 
+
+Observations of 144 step 
+Step length was 170.39797001052648 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.73448570413788 Mbps
+EWMA Delivery Rate during the last step is 4.4148902931271605 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 4.460685376377566 ms 
+RTT grad average during the last step is 0.00013794795165678934 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -3.201425 
+
+Observations of 145 step 
+Step length was 170.44282599817961 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.779893236696415 Mbps
+EWMA Delivery Rate during the last step is 4.47596843326941 Mbps 
+Cwnd during the last step is 400.3889921300504 
+EWMA Queuing Delay during the last step is 2.6847393252861718 ms 
+RTT grad average during the last step is -0.007216619366486342 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+I just came out of high delay
+local reward now: 5.000000 
+
+Observations of 146 step 
+Step length was 167.98658401239663 ms 
+Sending rate updated to 5.892961181640627 
+EWMA Sending Rate during the last step is 5.909765418619014 Mbps
+EWMA Delivery Rate during the last step is 4.418790956229725 Mbps 
+Cwnd during the last step is 1000.972480325126 
+EWMA Queuing Delay during the last step is 18.067484007411352 ms 
+RTT grad average during the last step is 0.1077422825461972 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+You probed up but got a delay, which is okay
+local reward now: -12.711110 
+
+Observations of 147 step 
+Step length was 204.19374899938703 ms 
+Sending rate updated to 4.7143689453125015 
+EWMA Sending Rate during the last step is 4.738873802401538 Mbps
+EWMA Delivery Rate during the last step is 4.758293022982134 Mbps 
+Cwnd during the last step is 160.15559685202015 
+EWMA Queuing Delay during the last step is 38.512076623672336 ms 
+RTT grad average during the last step is 0.08957306145837388 
+EWMA Loss rate during the last step is 0.0 
+experienced delay before
+trying to drain queue
+I have more increases, but I decreased
+local reward now: 10.000000 
+
+Observations of 148 step 
+Step length was 240.54986296687275 ms 
+Sending rate updated to 3.771495156250001 
+EWMA Sending Rate during the last step is 3.818280269208951 Mbps
+EWMA Delivery Rate during the last step is 4.691265598356458 Mbps 
