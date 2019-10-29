@@ -3,10 +3,10 @@ inital epsilon = 1; end epsilon = 0.02
 eagle-001: epsilon decays 0.01 every 10 iteration; under task 0; model saved after 770 iteration, 10h training; 8 cpu core
 eagle-003: epsilon decays 0.03 every 10 iteration; under task 0; model saved after 210 iteration, 3h training; 8 cpu core
 eagle-004: epsilon decays 0.03 every 10 iteration; under task 0; model saved after 240 iteration, 3h20min training; 8 cpu core
-eagle-005: epsilon decays 0.02 every 10 iteration; under task 0; model saved after 345 iteration, 5h30min training; reward 163; 4 cpu core
-eagle-006: epsilon decays 0.02 every 10 iteration; under task 0; model saved after 375 iteration, 6h15min training; reward 138; 4 cpu core
-eagle-007: epsilon decays 0.03 every 10 iteration; under task 0; model saved after 205 iteration, 3h20min training; reward 91; 4 cpu core
-eagle-008: epsilon decays 0.03 every 10 iteration; under task 0; model saved after 710 iteration, 11h42min training; reward 71; 4 cpu core
+eagle-005: epsilon decays 0.02 every 10 iteration; under task 17; model saved after 345 iteration, 5h30min training; reward 163; 4 cpu core
+eagle-006: epsilon decays 0.02 every 10 iteration; under task 17; model saved after 375 iteration, 6h15min training; reward 138; 4 cpu core
+eagle-007: epsilon decays 0.03 every 10 iteration; under task 17; model saved after 205 iteration, 3h20min training; reward 91; 4 cpu core
+eagle-008: epsilon decays 0.03 every 10 iteration; under task 17; model saved after 710 iteration, 11h42min training; reward 71; 4 cpu core
 eagle-expert:  epsilon decays 0; under task 0; 4 cpu core
 
 train_data:
