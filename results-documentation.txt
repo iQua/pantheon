@@ -9,6 +9,9 @@ eagle-007: epsilon decays 0.03 every 10 iteration; under task 0; model saved aft
 eagle-008: epsilon decays 0.03 every 10 iteration; under task 0; model saved after 710 iteration, 11h42min training; reward 71; 4 cpu core
 eagle-expert:  epsilon decays 0; under task 0; 4 cpu core
 
+train_data:
+has the tensorboard runs and screenshots of the average episodic reward
+
 ---
 
 SynBBRVSBBR-DecisionProcess: testing our synthesized bbr with bbbr and vivace to after having the decision making in a different process and avoiding delay caused by .join()
