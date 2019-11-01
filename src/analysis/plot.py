@@ -9,6 +9,8 @@ from multiprocessing.pool import ThreadPool
 import numpy as np
 import matplotlib_agg
 import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
 import matplotlib.ticker as ticker
 
 import arg_parser
@@ -66,7 +68,7 @@ class Plot(object):
 
         return expt_title
 
-    def parse_tunnel_log(self, cc, run_id):
+    def parse_tunnel_log(self, cc, run_id, all_tput_path, all_delay_path):
         log_prefix = cc
         if self.flows == 0:
             log_prefix += '_mm'
@@ -100,9 +102,13 @@ class Plot(object):
             sys.stderr.write('$ tunnel_graph %s\n' % log_path)
             try:
                 tunnel_results = tunnel_graph.TunnelGraph(
+                    cc=cc,
+                    all_tput_graph=all_tput_path,
+                    all_delay_graph=all_delay_path,
                     tunnel_log=log_path,
                     throughput_graph=tput_graph_path,
-                    delay_graph=delay_graph_path).run()
+                    delay_graph=delay_graph_path
+                ).run()
             except Exception as exception:
                 sys.stderr.write('Error: %s\n' % exception)
                 sys.stderr.write('Warning: "tunnel_graph %s" failed but '
@@ -171,8 +177,17 @@ class Plot(object):
 
         while cc_id < len(self.cc_schemes):
             cc = self.cc_schemes[cc_id]
+
+            # gather all time-varying tput and delay into one file of each run for all cc
+            all_tput_path = path.join(self.data_dir, 'all_throughput_run' + str(run_id) + '.log')
+            all_delay_path = path.join(self.data_dir, 'all_delay_run' + str(run_id) + '.log')
+            with open(all_tput_path, 'w') as all_tput_log:
+                all_tput_log.write("Scheme\tTraffic\tTime (s)\tThroughput (Mbit/s)\n")
+            with open(all_delay_path, 'w') as all_delay_log:
+                all_delay_log.write("Scheme\tTime (s)\tDelay (ms)\n")
+
             perf_data[cc][run_id] = pool.apply_async(
-                self.parse_tunnel_log, args=(cc, run_id))
+                self.parse_tunnel_log, args=(cc, run_id, all_tput_path, all_delay_path))
 
             run_id += 1
             if run_id > self.run_times:
@@ -313,8 +328,31 @@ class Plot(object):
             'Saved throughput graphs, delay graphs, and summary '
             'graphs in %s\n' % self.data_dir)
 
+    def plot_all_throughput_graph(self):
+        sns.set(style="ticks")
+        for i in range(1, self.run_times + 1):
+            data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
+            data = pd.read_table(data_path, sep="\t")
+            sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Traffic", data=data)
+            plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
+            plt.savefig(path.join(self.data_dir, 'all_throughput_run' + str(i) + '.pdf'), bbox_inches='tight')
+
+    def plot_all_delay_graph(self):
+        sns.set(style="ticks")
+        for i in range(1, self.run_times + 1):
+            data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
+            data = pd.read_table(data_path, sep="\t")
+            sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", data=data)
+            plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
+            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), bbox_inches='tight')
+
+
     def run(self):
         perf_data, stats_logs = self.eval_performance()
+
+        all_perf_path = path.join(self.data_dir, 'all_perf.log')
+        with open(all_perf_path, 'w') as all_perf_log:
+            all_perf_log.write('Scheme\tAvg throughput (Mbit/s)\tAvg delay (ms)\tAvg loss rate\n')
 
         data_for_plot = {}
         data_for_json = {}
@@ -322,6 +360,11 @@ class Plot(object):
         for cc in perf_data:
             data_for_plot[cc] = []
             data_for_json[cc] = {}
+            sum_tput = 0
+            sum_delay = 0
+            sum_loss = 0
+            valid_run_times = 0
+            
 
             for run_id in perf_data[cc]:
                 if perf_data[cc][run_id] is None:
@@ -329,6 +372,8 @@ class Plot(object):
 
                 tput = perf_data[cc][run_id]['throughput']
                 delay = perf_data[cc][run_id]['delay']
+                loss = perf_data[cc][run_id]['loss']
+
                 if tput is None or delay is None:
                     continue
                 data_for_plot[cc].append((tput, delay))
@@ -337,7 +382,28 @@ class Plot(object):
                 if flow_data is not None:
                     data_for_json[cc][run_id] = flow_data
 
+                # calculate the sum performance of all runs for every cc
+                valid_run_times += 1
+                sum_tput += tput
+                sum_delay += delay
+                sum_loss += loss
+
+                # gather cc performance data into one file
+                # with open(all_perf_path, 'a') as all_perf_log:
+                #     all_perf_log.write('%s %d %.2f %.2f %.6f\n' % (cc, run_id, tput, delay, loss))
+
+            # calculate the average performance of all runs for every cc
+            avg_tput = (float(sum_tput) / valid_run_times) if valid_run_times > 0 else 0 
+            avg_delay = float(sum_delay) / valid_run_times if valid_run_times > 0 else 0 
+            avg_loss = float(sum_loss) / valid_run_times if valid_run_times > 0 else 0 
+
+            # gather avg cc performance data of all run into one file
+            with open(all_perf_path, 'a') as all_perf_log:
+                all_perf_log.write('%s\t%.2f\t%.2f\t%.6f\n' % (cc, avg_tput, avg_delay, avg_loss))
+
         if not self.no_graphs:
+            # self.plot_all_throughput_graph()
+            # self.plot_all_delay_graph()
             self.plot_throughput_delay(data_for_plot)
 
         plt.close('all')

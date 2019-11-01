@@ -12,12 +12,16 @@ import arg_parser
 
 
 class TunnelGraph(object):
-    def __init__(self, tunnel_log, throughput_graph=None, delay_graph=None,
-                 ms_per_bin=500):
+    def __init__(self, cc, tunnel_log, all_tput_graph, all_delay_graph,
+                 throughput_graph=None, delay_graph=None,
+                 ms_per_bin=150):
+        self.cc = cc
         self.tunnel_log = tunnel_log
         self.throughput_graph = throughput_graph
         self.delay_graph = delay_graph
         self.ms_per_bin = ms_per_bin
+        self.all_tput_log = all_tput_graph
+        self.all_delay_log = all_delay_graph
 
     def ms_to_bin(self, ts, first_ts):
         return int((ts - first_ts) / self.ms_per_bin)
@@ -252,6 +256,18 @@ class TunnelGraph(object):
             self.total_percentile_delay = np.percentile(
                 total_delays, 95, interpolation='nearest')
 
+        # gather all time-varying tput and delay into one file of each run for all cc (only one flow)
+        with open(self.all_tput_log, 'a') as all_tput_log:
+            for i in range(len(self.egress_t[1])):
+                all_tput_log.write(
+                    '%s\tegress\t%.2f\t%.2f\n' % (self.cc, self.egress_t[1][i], self.egress_tput[1][i]))
+            for i in range(len(self.ingress_t[1])):
+                all_tput_log.write(
+                    '%s\tingress\t%.2f\t%.2f\n' % (self.cc, self.ingress_t[1][i], self.ingress_tput[1][i]))
+        with open(self.all_delay_log, 'a') as all_delay_log:
+            for i in range(len(self.delays_t[1])):
+                all_delay_log.write('%s\t%f\t%.2f\n' % (self.cc, self.delays_t[1][i], self.delays[1][i]))
+
     def flip(self, items, ncol):
         return list(itertools.chain(*[items[i::ncol] for i in range(ncol)]))
 
@@ -349,6 +365,8 @@ class TunnelGraph(object):
         fig.savefig(self.delay_graph, bbox_extra_artists=(lgd,),
                     bbox_inches='tight', pad_inches=0.2)
 
+
+
     def statistics_string(self):
         if len(self.flows) == 1:
             flows_str = 'flow'
@@ -402,6 +420,7 @@ class TunnelGraph(object):
         if self.delay_graph:
             self.plot_delay_graph()
 
+
         plt.close('all')
 
         tunnel_results = {}
@@ -433,7 +452,10 @@ def main():
     args = arg_parser.parse_tunnel_graph()
 
     tunnel_graph = TunnelGraph(
+        cc=args.cc,
         tunnel_log=args.tunnel_log,
+        all_tput_graph=args.all_tput_log,
+        all_delay_graph=args.all_delay_log,
         throughput_graph=args.throughput_graph,
         delay_graph=args.delay_graph,
         ms_per_bin=args.ms_per_bin)
