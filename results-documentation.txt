@@ -7,7 +7,13 @@ eagle-005: epsilon decays 0.02 every 10 iteration; under task 17; model saved af
 eagle-006: epsilon decays 0.02 every 10 iteration; under task 17; model saved after 375 iteration, 6h15min training; reward 138; 4 cpu core
 eagle-007: epsilon decays 0.03 every 10 iteration; under task 17; model saved after 205 iteration, 3h20min training; reward 91; 4 cpu core
 eagle-008: epsilon decays 0.03 every 10 iteration; under task 17; model saved after 710 iteration, 11h42min training; reward 71; 4 cpu core
-eagle-expert:  epsilon decays 0; under task 0; 4 cpu core
+eagle-expert-1: epsilon decays 0; under task 17; model saved after 180 iteration; 4 cpu core 
+eagle-expert-2: epsilon decays 0; under task 17; model saved after 295 iteration; 4 cpu core 
+eagle-expert-3: epsilon decays 0; under task 17; model saved after 395 iteration; 4 cpu core 
+eagle-expert-4: epsilon decays 0; under task 17; model saved after 495 iteration; 4 cpu core 
+eagle-expert-5: epsilon decays 0; under task 17; model saved after 500 iteration; 4 cpu core 
+eagle-expert-6: epsilon decays 0; under task 17; model saved after 595 iteration; 4 cpu core 
+eagle-expert-7: epsilon decays 0; under task 17; model saved after 675 iteration; 4 cpu core 
 
 train_data:
 has the tensorboard runs and screenshots of the average episodic reward
