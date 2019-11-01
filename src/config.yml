@@ -79,6 +79,82 @@ schemes:
     name : Eagle-v3
     color: red
     marker: '+'
+  eagle-001:
+    name: Eagle-001
+    color: silver
+    marker: '+'
+  eagle-003:
+    name: Eagle-003
+    color: green
+    marker: '+'
+  eagle-004:
+    name: Eagle-004
+    color: skyblue
+    marker: '+'
+  eagle-005:
+    name: Eagle-005
+    color: red
+    marker: '+'
+  eagle-006:
+    name: Eagle-006
+    color: brown
+    marker: '+'
+  eagle-007:
+    name: Eagle-007
+    color: blue
+    marker: '+'
+  eagle-008:
+    name: Eagle-008
+    color: violet
+    marker: '+'
+  eagle-009:
+    name: Eagle-009
+    color: gold
+    marker: '+'
+  eagle-expert-1:
+    name: Eagle-expert-1
+    color: gold
+    marker: '+'
+  eagle-expert-2:
+    name: Eagle-expert-2
+    color: black
+    marker: '+'
+  eagle-expert-3:
+    name: Eagle-expert-3
+    color: magenta
+    marker: '+'
+  eagle-expert-4:
+    name: Eagle-expert-4
+    color: blue
+    marker: '+'
+  eagle-expert-5:
+    name: Eagle-expert-5
+    color: red
+    marker: '+'
+  eagle-expert-6:
+    name: Eagle-expert-6
+    color: brown
+    marker: '+'
+  eagle-expert-7:
+    name: Eagle-expert-7
+    color: green
+    marker: '+'
+  eagle-001-1:
+    name: Eagle-001-1
+    color: red
+    marker: '+'
+  eagle-001-2:
+    name: Eagle-0.01-2
+    color: violet
+    marker: '+'
+  eagle-001-3:
+    name: Eagle-0.01-3
+    color: magenta
+    marker: '+'
+  eagle-001-4:
+    name: Eagle-0.01-4
+    color: brown
+    marker: '+'
   synthesizedBBR:
     name : Synthesized-BBR
     color: blue
