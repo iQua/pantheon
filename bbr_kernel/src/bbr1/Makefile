@@ -18,3 +18,8 @@ install:
 clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 endif
+
+test:
+	sudo dmesg -C
+	sudo insmod tcp_bbr.ko	
+	dmesg -wH
