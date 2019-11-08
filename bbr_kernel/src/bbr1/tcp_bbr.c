@@ -242,11 +242,19 @@ static u16 bbr_extra_acked(const struct sock *sk)
 static u64 bbr_rate_bytes_per_sec(struct sock *sk, u64 rate, int gain)
 {
 	unsigned int mss = tcp_sk(sk)->mss_cache;
-
+	printk(KERN_DEBUG "mss: %d", mss);
 	rate *= mss;
+	printk(KERN_DEBUG "rate before gain: %lld", rate);
 	rate *= gain;
+	//gain of 739 can be factor of 2.8867..
+	//mss changes
+	printk(KERN_DEBUG "rate after gain: %lld", rate);
 	rate >>= BBR_SCALE;
+	printk(KERN_DEBUG "rate after BBR_SCALE: %lld", rate);
 	rate *= USEC_PER_SEC / 100 * (100 - bbr_pacing_margin_percent);
+	printk(KERN_DEBUG "rate after decreasing by 1:  %lld", rate);
+	printk(KERN_DEBUG "rate to be returned:  %lld", rate >> BW_SCALE);
+	//rate returned is probably per sec 
 	return rate >> BW_SCALE;
 }
 
@@ -257,6 +265,7 @@ static unsigned long bbr_bw_to_pacing_rate(struct sock *sk, u32 bw, int gain)
 
 	rate = bbr_rate_bytes_per_sec(sk, rate, gain);
 	rate = min_t(u64, rate, sk->sk_max_pacing_rate);
+	//printk(KERN_DEBUG "rate: %lld \n", rate);
 	return rate;
 }
 
@@ -271,11 +280,16 @@ static void bbr_init_pacing_rate_from_rtt(struct sock *sk)
 	if (tp->srtt_us) {		/* any RTT sample yet? */
 		rtt_us = max(tp->srtt_us >> 3, 1U);
 		bbr->has_seen_rtt = 1;
-	} else {			 /* no RTT sample yet */
+	} else {			 /* no RTT sample yet *
 		rtt_us = USEC_PER_MSEC;	 /* use nominal default RTT */
 	}
 	bw = (u64)tp->snd_cwnd * BW_UNIT;
+	printk(KERN_DEBUG "tp->snd_cwnd: %lld", tp->snd_cwnd);
+	printk(KERN_DEBUG "RTT: %d", rtt_us);
+	printk(KERN_DEBUG "Before BW: %lld", bw);
 	do_div(bw, rtt_us);
+	printk(KERN_DEBUG "After BW: %lld",bw); //bw is in B/s
+	//do_div() divides bw by rtt_us
 	sk->sk_pacing_rate = bbr_bw_to_pacing_rate(sk, bw, bbr_high_gain);
 }
 
@@ -1023,7 +1037,6 @@ static void bbr_main(struct sock *sk, const struct rate_sample *rs)
 {
 	struct bbr *bbr = inet_csk_ca(sk);
 	u32 bw;
-	printk(KERN_DEBUG "Debuging from bbr !!!!!!!!!!!!!!!\n");
 
 
 	bbr_update_model(sk, rs);
@@ -1040,6 +1053,7 @@ static void bbr_init(struct sock *sk)
 
 	bbr->prior_cwnd = 0;
 	tp->snd_ssthresh = TCP_INFINITE_SSTHRESH;
+	printk(KERN_DEBUG "TCP_INFINITE_SSTHRESH: %d", TCP_INFINITE_SSTHRESH);
 	bbr->rtt_cnt = 0;
 	bbr->next_rtt_delivered = 0;
 	bbr->prev_ca_state = TCP_CA_Open;
@@ -1155,7 +1169,7 @@ static struct tcp_congestion_ops tcp_bbr_cong_ops __read_mostly = {
 static int __init bbr_register(void)
 {
 	BUILD_BUG_ON(sizeof(struct bbr) > ICSK_CA_PRIV_SIZE);
-        printk(KERN_INFO "bbr init reg\n");
+        printk(KERN_DEBUG "bbr init reg\n");
 	return tcp_register_congestion_control(&tcp_bbr_cong_ops);
 }
 
