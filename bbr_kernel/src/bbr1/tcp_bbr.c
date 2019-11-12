@@ -254,6 +254,7 @@ static u64 bbr_rate_bytes_per_sec(struct sock *sk, u64 rate, int gain)
 	rate *= USEC_PER_SEC / 100 * (100 - bbr_pacing_margin_percent);
 	printk(KERN_DEBUG "rate after decreasing by 1:  %lld", rate);
 	printk(KERN_DEBUG "rate to be returned:  %lld", rate >> BW_SCALE);
+	printk(KERN_DEBUG "check_tcp_jiffies32: %d", tcp_jiffies32);
 	//rate returned is probably per sec 
 	return rate >> BW_SCALE;
 }
@@ -322,6 +323,7 @@ static u32 bbr_tso_segs_goal(struct sock *sk)
 	 */
 	bytes = min_t(unsigned long, sk->sk_pacing_rate >> sk->sk_pacing_shift,
 		      GSO_MAX_SIZE - 1 - MAX_TCP_HEADER);
+	printk(KERN_DEBUG "sk_pacing_shift: %d", sk->sk_pacing_shift);
 	segs = max_t(u32, bytes / tp->mss_cache, bbr_min_tso_segs(sk));
 
 	return min(segs, 0x7FU);
@@ -345,6 +347,7 @@ static void bbr_cwnd_event(struct sock *sk, enum tcp_ca_event event)
 	struct bbr *bbr = inet_csk_ca(sk);
 
 	if (event == CA_EVENT_TX_START && tp->app_limited) {
+		
 		bbr->idle_restart = 1;
 		bbr->ack_epoch_mstamp = tp->tcp_mstamp;
 		bbr->ack_epoch_acked = 0;
@@ -723,6 +726,7 @@ static void bbr_lt_bw_sampling(struct sock *sk, const struct rate_sample *rs)
 
 	/* To avoid underestimates, reset sampling if we run out of data. */
 	if (rs->is_app_limited) {
+		printk(KERN_DEBUG "is_app_limited: %d", rs->is_app_limited);
 		bbr_reset_lt_bw_sampling(sk);
 		return;
 	}
@@ -924,6 +928,7 @@ static void bbr_check_probe_rtt_done(struct sock *sk)
 		return;
 
 	bbr->min_rtt_stamp = tcp_jiffies32;  /* wait a while until PROBE_RTT */
+	printk(KERN_DEBUG "check_probe_rtt_tcp_jiffies32: %d", tcp_jiffies32);
 	tp->snd_cwnd = max(tp->snd_cwnd, bbr->prior_cwnd);
 	bbr_reset_mode(sk);
 }
@@ -956,11 +961,13 @@ static void bbr_update_min_rtt(struct sock *sk, const struct rate_sample *rs)
 	/* Track min RTT seen in the min_rtt_win_sec filter window: */
 	filter_expired = after(tcp_jiffies32,
 			       bbr->min_rtt_stamp + bbr_min_rtt_win_sec * HZ);
+	printk(KERN_DEBUG "HZ: %d", HZ);
 	if (rs->rtt_us >= 0 &&
 	    (rs->rtt_us <= bbr->min_rtt_us ||
 	     (filter_expired && !rs->is_ack_delayed))) {
 		bbr->min_rtt_us = rs->rtt_us;
 		bbr->min_rtt_stamp = tcp_jiffies32;
+		printk(KERN_DEBUG "update_min_rtt_tcp_jiffies32: %d", tcp_jiffies32);
 	}
 
 	if (bbr_probe_rtt_mode_ms > 0 && filter_expired &&
@@ -974,11 +981,13 @@ static void bbr_update_min_rtt(struct sock *sk, const struct rate_sample *rs)
 		/* Ignore low rate samples during this mode. */
 		tp->app_limited =
 			(tp->delivered + tcp_packets_in_flight(tp)) ? : 1;
+		printk(KERN_DEBUG "app_limited: %d", tp->app_limited);
 		/* Maintain min packets in flight for max(200 ms, 1 round). */
 		if (!bbr->probe_rtt_done_stamp &&
 		    tcp_packets_in_flight(tp) <= bbr_cwnd_min_target) {
 			bbr->probe_rtt_done_stamp = tcp_jiffies32 +
 				msecs_to_jiffies(bbr_probe_rtt_mode_ms);
+			printk(KERN_DEBUG "probe_rtt_tcp_jiffies32: %d", tcp_jiffies32);
 			bbr->probe_rtt_round_done = 0;
 			bbr->next_rtt_delivered = tp->delivered;
 		} else if (bbr->probe_rtt_done_stamp) {
@@ -1063,6 +1072,7 @@ static void bbr_init(struct sock *sk)
 	bbr->probe_rtt_round_done = 0;
 	bbr->min_rtt_us = tcp_min_rtt(tp);
 	bbr->min_rtt_stamp = tcp_jiffies32;
+	printk(KERN_DEBUG "init_tcp_jiffies32: %d", tcp_jiffies32);
 
 	minmax_reset(&bbr->bw, bbr->rtt_cnt, 0);  /* init max bw to 0 */
 
