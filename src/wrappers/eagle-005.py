@@ -9,9 +9,9 @@ import context
 def main():
         args = arg_parser.sender_first()
         cc_repo = path.join(context.third_party_dir, 'eagle-v3')
-        send_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'example-xentropy.py')
+        send_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'example_xentropy.py')
         recv_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'run_receiver.py')
-        model_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs/model', 'model-xentropy-0.02decay10iter-345iter-rw163.pt')
+        model_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs/models', 'model-xentropy-0.02decay10iter-345iter-rw163.pt')
         #dependencies = path.join(cc_repo, 'dependencies.sh')
         if args.option == 'setup':
             #check_call(dependencies, shell = True)

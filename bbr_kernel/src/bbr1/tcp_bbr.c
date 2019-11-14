@@ -242,7 +242,7 @@ static u16 bbr_extra_acked(const struct sock *sk)
 static u64 bbr_rate_bytes_per_sec(struct sock *sk, u64 rate, int gain)
 {
 	unsigned int mss = tcp_sk(sk)->mss_cache;
-	printk(KERN_DEBUG "mss: %d", mss);
+	printk(KERN_DEBUG "bbr_rate_bytes_per_sec: mss: %d", mss);
 	rate *= mss;
 	printk(KERN_DEBUG "rate before gain: %lld", rate);
 	rate *= gain;
@@ -266,7 +266,7 @@ static unsigned long bbr_bw_to_pacing_rate(struct sock *sk, u32 bw, int gain)
 
 	rate = bbr_rate_bytes_per_sec(sk, rate, gain);
 	rate = min_t(u64, rate, sk->sk_max_pacing_rate);
-	//printk(KERN_DEBUG "rate: %lld \n", rate);
+	printk(KERN_DEBUG "sk max pacing rate: %lu \n", sk->sk_max_pacing_rate);
 	return rate;
 }
 
@@ -280,8 +280,9 @@ static void bbr_init_pacing_rate_from_rtt(struct sock *sk)
 
 	if (tp->srtt_us) {		/* any RTT sample yet? */
 		rtt_us = max(tp->srtt_us >> 3, 1U);
+		
 		bbr->has_seen_rtt = 1;
-	} else {			 /* no RTT sample yet *
+	} else {			 /* no RTT sample yet */
 		rtt_us = USEC_PER_MSEC;	 /* use nominal default RTT */
 	}
 	bw = (u64)tp->snd_cwnd * BW_UNIT;
@@ -292,6 +293,7 @@ static void bbr_init_pacing_rate_from_rtt(struct sock *sk)
 	printk(KERN_DEBUG "After BW: %lld",bw); //bw is in B/s
 	//do_div() divides bw by rtt_us
 	sk->sk_pacing_rate = bbr_bw_to_pacing_rate(sk, bw, bbr_high_gain);
+	printk(KERN_DEBUG "init sk pacing rate: %lu \n", sk->sk_pacing_rate);
 }
 
 /* Pace using current bw estimate and a gain factor. */
@@ -305,6 +307,7 @@ static void bbr_set_pacing_rate(struct sock *sk, u32 bw, int gain)
 		bbr_init_pacing_rate_from_rtt(sk);
 	if (bbr_full_bw_reached(sk) || rate > sk->sk_pacing_rate)
 		sk->sk_pacing_rate = rate;
+		printk(KERN_DEBUG "set sk pacing rate: %lu \n", sk->sk_pacing_rate);
 }
 
 /* override sysctl_tcp_min_tso_segs */
@@ -325,7 +328,6 @@ static u32 bbr_tso_segs_goal(struct sock *sk)
 		      GSO_MAX_SIZE - 1 - MAX_TCP_HEADER);
 	printk(KERN_DEBUG "sk_pacing_shift: %d", sk->sk_pacing_shift);
 	segs = max_t(u32, bytes / tp->mss_cache, bbr_min_tso_segs(sk));
-
 	return min(segs, 0x7FU);
 }
 
@@ -350,6 +352,7 @@ static void bbr_cwnd_event(struct sock *sk, enum tcp_ca_event event)
 		
 		bbr->idle_restart = 1;
 		bbr->ack_epoch_mstamp = tp->tcp_mstamp;
+		printk(KERN_DEBUG "bbr_cwnd_event: tcp_mstamp %d", tp->tcp_mstamp);
 		bbr->ack_epoch_acked = 0;
 		/* Avoid pointless buffer overflows: pace at est. bw if we don't
 		 * need more speed (we're restarting from idle and app-limited).
@@ -454,6 +457,7 @@ static u32 bbr_packets_in_net_at_edt(struct sock *sk, u32 inflight_now)
 
 	now_ns = tp->tcp_clock_cache;
 	edt_ns = max(tp->tcp_wstamp_ns, now_ns);
+	printk(KERN_DEBUG "tcp_in_flight: %u", inflight_now);
 	interval_us = div_u64(edt_ns - now_ns, NSEC_PER_USEC);
 	interval_delivered = (u64)bbr_bw(sk) * interval_us >> BW_SCALE;
 	inflight_at_edt = inflight_now;
@@ -570,6 +574,7 @@ static bool bbr_is_next_cycle_phase(struct sock *sk,
 	bool is_full_length =
 		tcp_stamp_us_delta(tp->delivered_mstamp, bbr->cycle_mstamp) >
 		bbr->min_rtt_us;
+	printk(KERN_DEBUG "is next cycle phase: delivered_stamp: %llu", tp->delivered_mstamp);
 	u32 inflight, bw;
 
 	/* The pacing_gain of 1.0 paces at the estimated bw to try to fully
@@ -750,6 +755,7 @@ static void bbr_lt_bw_sampling(struct sock *sk, const struct rate_sample *rs)
 	/* Calculate packets lost and delivered in sampling interval. */
 	lost = tp->lost - bbr->lt_last_lost;
 	delivered = tp->delivered - bbr->lt_last_delivered;
+	printk(KERN_DEBUG "lt_bw_sampling: delivered %u", tp->delivered);
 	/* Is loss rate (lost/delivered) >= lt_loss_thresh? If not, wait. */
 	if (!delivered || (lost << BBR_SCALE) < bbr_lt_loss_thresh * delivered)
 		return;
@@ -774,8 +780,40 @@ static void bbr_update_bw(struct sock *sk, const struct rate_sample *rs)
 {
 	struct tcp_sock *tp = tcp_sk(sk);
 	struct bbr *bbr = inet_csk_ca(sk);
-	u64 bw;
 
+	printk(KERN_DEBUG "sk pacing rate %lu", sk->sk_pacing_rate);
+	printk(KERN_DEBUG "sk max pacing rate %lu", sk->sk_max_pacing_rate);
+	printk(KERN_DEBUG "sk pacing status %u", sk->sk_pacing_status);
+
+	printk(KERN_DEBUG "tp rtt min %u", tcp_min_rtt(tp));
+	printk(KERN_DEBUG "tp mss cache %u", tp->mss_cache);
+	printk(KERN_DEBUG "tp tcp wstamp ns %llu", tp->tcp_wstamp_ns);
+	printk(KERN_DEBUG "tp tcp clock cache %llu", tp->tcp_clock_cache);
+	printk(KERN_DEBUG "tp tcp mstamp %llu", tp->tcp_mstamp);
+	printk(KERN_DEBUG "tp srtt us %u", tp->srtt_us);
+	printk(KERN_DEBUG "tp snd ssthresh %u", tp->snd_ssthresh);
+	printk(KERN_DEBUG "tp snd cwnd %u", tp->snd_cwnd);
+	printk(KERN_DEBUG "tp snd cwnd clamp %u", tp->snd_cwnd_clamp);
+	printk(KERN_DEBUG "tp delivered %u", tp->delivered);
+	printk(KERN_DEBUG "tp lost %u", tp->lost);
+	printk(KERN_DEBUG "tp app limited %u", tp->app_limited);
+	printk(KERN_DEBUG "tp delivered mstamp %llu", tp->delivered_mstamp);
+	printk(KERN_DEBUG "tp tcp packets in flight %d", tcp_packets_in_flight(tp));
+
+
+	printk(KERN_DEBUG "rs delivered %d", rs->delivered);
+	printk(KERN_DEBUG "rs rtt_us %ld", rs->rtt_us);
+	printk(KERN_DEBUG "rs losses %d", rs->losses);
+	printk(KERN_DEBUG "rs prior delivered: %u", rs->prior_delivered);
+	printk(KERN_DEBUG "rs internal us: %ld", rs->interval_us);
+	printk(KERN_DEBUG "rs acked sacked: %u", rs->acked_sacked);
+	printk(KERN_DEBUG "rs prior in flight: %u", rs->prior_in_flight);
+	printk(KERN_DEBUG "rs is app limited: %d", rs->is_app_limited);
+	printk(KERN_DEBUG "rs is ack delayed: %d", rs->is_ack_delayed);
+
+
+	u64 bw;
+		printk(KERN_DEBUG "update_min_bw: rs delivered %d", rs->delivered);
 	bbr->round_start = 0;
 	if (rs->delivered < 0 || rs->interval_us <= 0)
 		return; /* Not a valid observation */
@@ -833,7 +871,7 @@ static void bbr_update_ack_aggregation(struct sock *sk,
 	u32 epoch_us, expected_acked, extra_acked;
 	struct bbr *bbr = inet_csk_ca(sk);
 	struct tcp_sock *tp = tcp_sk(sk);
-
+	printk(KERN_DEBUG "update_ack_aggregation: %ld", rs->interval_us);
 	if (!bbr_extra_acked_gain || rs->acked_sacked <= 0 ||
 	    rs->delivered < 0 || rs->interval_us <= 0)
 		return;
@@ -1046,7 +1084,8 @@ static void bbr_main(struct sock *sk, const struct rate_sample *rs)
 {
 	struct bbr *bbr = inet_csk_ca(sk);
 	u32 bw;
-
+	u32 wlen = sock_net(sk)->ipv4.sysctl_tcp_min_rtt_wlen * HZ;
+	printk(KERN_DEBUG "wlen: %u", wlen);
 
 	bbr_update_model(sk, rs);
 
@@ -1090,6 +1129,7 @@ static void bbr_init(struct sock *sk)
 	bbr_reset_startup_mode(sk);
 
 	bbr->ack_epoch_mstamp = tp->tcp_mstamp;
+	
 	bbr->ack_epoch_acked = 0;
 	bbr->extra_acked_win_rtts = 0;
 	bbr->extra_acked_win_idx = 0;
