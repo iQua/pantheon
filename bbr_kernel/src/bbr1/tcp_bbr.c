@@ -213,8 +213,9 @@ static bool bbr_full_bw_reached(const struct sock *sk)
 static u32 bbr_max_bw(const struct sock *sk)
 {
 	struct bbr *bbr = inet_csk_ca(sk);
-
+	printk(KERN_DEBUG "bbr max bandwidth: %u", minmax_get(&bbr->bw));
 	return minmax_get(&bbr->bw);
+
 }
 
 /* Return the estimated bandwidth of the path, in pkts/uS << BW_SCALE. */
@@ -457,7 +458,6 @@ static u32 bbr_packets_in_net_at_edt(struct sock *sk, u32 inflight_now)
 
 	now_ns = tp->tcp_clock_cache;
 	edt_ns = max(tp->tcp_wstamp_ns, now_ns);
-	printk(KERN_DEBUG "tcp_in_flight: %u", inflight_now);
 	interval_us = div_u64(edt_ns - now_ns, NSEC_PER_USEC);
 	interval_delivered = (u64)bbr_bw(sk) * interval_us >> BW_SCALE;
 	inflight_at_edt = inflight_now;
@@ -780,7 +780,7 @@ static void bbr_update_bw(struct sock *sk, const struct rate_sample *rs)
 {
 	struct tcp_sock *tp = tcp_sk(sk);
 	struct bbr *bbr = inet_csk_ca(sk);
-
+	printk(KERN_NOTICE "%lu", sk->sk_pacing_rate);
 	printk(KERN_DEBUG "sk pacing rate %lu", sk->sk_pacing_rate);
 	printk(KERN_DEBUG "sk max pacing rate %lu", sk->sk_max_pacing_rate);
 	printk(KERN_DEBUG "sk pacing status %u", sk->sk_pacing_status);
@@ -798,6 +798,10 @@ static void bbr_update_bw(struct sock *sk, const struct rate_sample *rs)
 	printk(KERN_DEBUG "tp lost %u", tp->lost);
 	printk(KERN_DEBUG "tp app limited %u", tp->app_limited);
 	printk(KERN_DEBUG "tp delivered mstamp %llu", tp->delivered_mstamp);
+	printk(KERN_DEBUG "tp retransout %u", tp->retrans_out);
+	printk(KERN_DEBUG "tp packets out %u", tp->packets_out);
+	printk(KERN_DEBUG "tp sacked out %u", tp->sacked_out);
+	printk(KERN_DEBUG "tp lost out %u", tp->lost_out);
 	printk(KERN_DEBUG "tp tcp packets in flight %d", tcp_packets_in_flight(tp));
 
 
@@ -810,6 +814,8 @@ static void bbr_update_bw(struct sock *sk, const struct rate_sample *rs)
 	printk(KERN_DEBUG "rs prior in flight: %u", rs->prior_in_flight);
 	printk(KERN_DEBUG "rs is app limited: %d", rs->is_app_limited);
 	printk(KERN_DEBUG "rs is ack delayed: %d", rs->is_ack_delayed);
+	printk(KERN_DEBUG "icsk ca state: %hhu", inet_csk(sk)->icsk_ca_state);
+	
 
 
 	u64 bw;
@@ -834,6 +840,7 @@ static void bbr_update_bw(struct sock *sk, const struct rate_sample *rs)
 	 */
 	bw = (u64)rs->delivered * BW_UNIT;
 	do_div(bw, rs->interval_us);
+	printk(KERN_DEBUG "update bw: %llu", bw);
 
 	/* If this sample is application-limited, it is likely to have a very
 	 * low delivered count that represents application behavior rather than
@@ -1048,19 +1055,23 @@ static void bbr_update_gains(struct sock *sk)
 	case BBR_STARTUP:
 		bbr->pacing_gain = bbr_high_gain;
 		bbr->cwnd_gain	 = bbr_high_gain;
+		printk(KERN_DEBUG "BBR_STARTUP");
 		break;
 	case BBR_DRAIN:
 		bbr->pacing_gain = bbr_drain_gain;	/* slow, to drain */
+		printk(KERN_DEBUG "BBR_DRAIN");
 		bbr->cwnd_gain	 = bbr_high_gain;	/* keep cwnd */
 		break;
 	case BBR_PROBE_BW:
 		bbr->pacing_gain = (bbr->lt_use_bw ?
 				    BBR_UNIT :
 				    bbr_pacing_gain[bbr->cycle_idx]);
+		printk(KERN_DEBUG "BBR_PROBE_BW: %u", bbr->cycle_idx);
 		bbr->cwnd_gain	 = bbr_cwnd_gain;
 		break;
 	case BBR_PROBE_RTT:
 		bbr->pacing_gain = BBR_UNIT;
+		printk(KERN_DEBUG "BBR_PROBE_RTT");
 		bbr->cwnd_gain	 = BBR_UNIT;
 		break;
 	default:
