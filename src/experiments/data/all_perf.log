@@ -1,5 +1,3 @@
 Scheme	Avg throughput (Mbit/s)	Avg delay (ms)	Avg loss rate
-synthesizedBBR	9.74	12.51	0.000124
-eagle-v3	11.94	284.49	0.004078
-bbr	11.99	14.28	0.000400
-vivace	10.08	86.87	0.000000
+pybbr	9.66	45.19	0.053382
+bbr	0.00	0.00	0.000000
