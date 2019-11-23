@@ -74,6 +74,3 @@
 	path = third_party/eagle-v3
 	url = https://github.com/iQua/gold-IRL.git
 	ignore = dirty
-[submodule "third_party/synthesizedBBR"]
-	path = third_party/synthesizedBBR
-	url = https://github.com/iQua/gold-IRL.git
