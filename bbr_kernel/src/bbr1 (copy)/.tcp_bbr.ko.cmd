@@ -1,0 +1,1 @@
+cmd_/home/fei/pantheon/bbr_kernel/src/bbr1/tcp_bbr.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000 -T ./scripts/module-common.lds  --build-id  -o /home/fei/pantheon/bbr_kernel/src/bbr1/tcp_bbr.ko /home/fei/pantheon/bbr_kernel/src/bbr1/tcp_bbr.o /home/fei/pantheon/bbr_kernel/src/bbr1/tcp_bbr.mod.o ;  true

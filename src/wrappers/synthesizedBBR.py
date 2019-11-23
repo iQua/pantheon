@@ -8,8 +8,8 @@ import context
 
 def main():
         args = arg_parser.sender_first()
-        cc_repo = path.join(context.third_party_dir, 'synthesizedBBR')
-        send_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'example-xentropy.py')
+        cc_repo = path.join(context.third_party_dir, 'eagle-v3')
+        send_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'example_xentropy.py')
         recv_src = path.join(cc_repo, 'sender-receiver/sender-receiver/sender_receiver/envs', 'run_receiver.py')
         #dependencies = path.join(cc_repo, 'dependencies.sh')
         if args.option == 'setup':
@@ -17,7 +17,7 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3' , send_src, args.port, '--sending_rate', '--expert']
+            cmd = ['python3', send_src, args.port, '--expert', 'synthesizedBBR']
             subprocess.check_output(cmd)
             return
 
