@@ -1,3 +1,4 @@
 Scheme	Avg throughput (Mbit/s)	Avg delay (ms)	Avg loss rate
-pybbr	9.66	45.19	0.053382
-bbr	0.00	0.00	0.000000
+synthesizedBBR	84.58	29.47	0.002114
+pybbr	40.19	21.24	0.000876
+bbr	83.59	56.38	0.041204

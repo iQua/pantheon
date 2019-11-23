@@ -75,10 +75,6 @@ schemes:
     name: Eagle-v2
     color: blue
     marker: '+'
-  eagle-v3:
-    name : Eagle-v3
-    color: red
-    marker: '+'
   eagle-001:
     name: Eagle-001
     color: silver
@@ -159,8 +155,8 @@ schemes:
     name : Synthesized-BBR
     color: blue
     marker: '*'
-  pybbr:
-    name : python-BBR
+  pythonBBR:
+    name : Python-BBR
     color: blue
     marker: '^'
   aurora:
