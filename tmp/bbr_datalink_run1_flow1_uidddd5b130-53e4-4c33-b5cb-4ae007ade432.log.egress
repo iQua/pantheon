@@ -1,1 +1,0 @@
-# 'mm-tunnelclient' '--ingress-log=/home/fei/pantheon/tmp/bbr_acklink_run1_flow1_uidddd5b130-53e4-4c33-b5cb-4ae007ade432.log.ingress' '--egress-log=/home/fei/pantheon/tmp/bbr_datalink_run1_flow1_uidddd5b130-53e4-4c33-b5cb-4ae007ade432.log.egress' '100.64.0.1' '35298' '100.64.0.4' '100.64.0.3' egress: 1571602540281.399

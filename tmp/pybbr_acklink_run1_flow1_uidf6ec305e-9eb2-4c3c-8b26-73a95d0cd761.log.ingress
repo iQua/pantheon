@@ -1,2 +1,0 @@
-# 'mm-tunnelclient' '--ingress-log=/home/fei/pantheon/tmp/pybbr_acklink_run1_flow1_uidf6ec305e-9eb2-4c3c-8b26-73a95d0cd761.log.ingress' '--egress-log=/home/fei/pantheon/tmp/pybbr_datalink_run1_flow1_uidf6ec305e-9eb2-4c3c-8b26-73a95d0cd761.log.egress' '100.64.0.1' '49055' '100.64.0.4' '100.64.0.3' ingress: 1574360866218.214
-3390.669 - 0 - 83
