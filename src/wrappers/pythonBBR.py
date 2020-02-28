@@ -16,7 +16,7 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3' , send_src, args.port, '--expert', 'pythonBBR']
+            cmd = ['python3' , send_src, args.port, '--expert', 'pythonBBR', '--debug']
             subprocess.check_output(cmd)
             return
 
