@@ -461,10 +461,14 @@ static u32 bbr_packets_in_net_at_edt(struct sock *sk, u32 inflight_now)
 	interval_us = div_u64(edt_ns - now_ns, NSEC_PER_USEC);
 	interval_delivered = (u64)bbr_bw(sk) * interval_us >> BW_SCALE;
 	inflight_at_edt = inflight_now;
+        printk(KERN_DEBUG "interval_us %llu", interval_us);
+        printk(KERN_DEBUG "inflight at edt (prior inflight) %u", inflight_at_edt);
+        printk(KERN_DEBUG "interval_delivered %u", interval_delivered);
 	if (bbr->pacing_gain > BBR_UNIT)              /* increasing inflight */
 		inflight_at_edt += bbr_tso_segs_goal(sk);  /* include EDT skb */
 	if (interval_delivered >= inflight_at_edt)
 		return 0;
+     
 	return inflight_at_edt - interval_delivered;
 }
 
@@ -574,7 +578,8 @@ static bool bbr_is_next_cycle_phase(struct sock *sk,
 	bool is_full_length =
 		tcp_stamp_us_delta(tp->delivered_mstamp, bbr->cycle_mstamp) >
 		bbr->min_rtt_us;
-	printk(KERN_DEBUG "is next cycle phase: delivered_stamp: %llu", tp->delivered_mstamp);
+	printk(KERN_DEBUG "is next cycle phase: delivered_mstamp - cycle_mstamp: %llu", tp->delivered_mstamp - bbr->cycle_mstamp);
+        printk(KERN_DEBUG "min_rtt_us: %u", bbr->min_rtt_us);
 	u32 inflight, bw;
 
 	/* The pacing_gain of 1.0 paces at the estimated bw to try to fully
@@ -592,6 +597,8 @@ static bool bbr_is_next_cycle_phase(struct sock *sk,
 	 * a path with small buffers may not hold that much.
 	 */
 	if (bbr->pacing_gain > BBR_UNIT)
+                printk(KERN_DEBUG "inflight at edt %u", inflight);
+                printk(KERN_DEBUG "bbr inflight %u", bbr_inflight(sk, bw, bbr->pacing_gain));
 		return is_full_length &&
 			(rs->losses ||  /* perhaps pacing_gain*BDP won't fit */
 			 inflight >= bbr_inflight(sk, bw, bbr->pacing_gain));
@@ -600,6 +607,8 @@ static bool bbr_is_next_cycle_phase(struct sock *sk,
 	 * probing didn't find more bw. If inflight falls to match BDP then we
 	 * estimate queue is drained; persisting would underutilize the pipe.
 	 */
+        printk(KERN_DEBUG "inflight at edt %u", inflight);
+        printk(KERN_DEBUG "bbr inflight %u", bbr_inflight(sk, bw, BBR_UNIT));
 	return is_full_length ||
 		inflight <= bbr_inflight(sk, bw, BBR_UNIT);
 }
