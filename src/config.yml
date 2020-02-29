@@ -163,6 +163,10 @@ schemes:
     name : Python-BBR
     color: blue
     marker: '^'
+  eagle-plus:
+    name : Eagle-plus
+    color: gold
+    marker: '+'
   aurora:
     name: Aurora
     color: black
