@@ -3,6 +3,8 @@
 *.txt
 *.pdf
 /tmp/
+/runs/
+/src/wrappers/runs/
 
 ##### Python
 

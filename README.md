@@ -87,6 +87,12 @@ running time, arbitrary set of mahimahi shells for emulation tests,
 data sender side for real tests; use `--data-dir DIR` to specify an
 an output directory to save logs.
 
+To test schemes in custom mahimahi emulated networks, run like
+
+```
+src/experiments/test.py local --schemes "bbr"  --uplink-trace=/home/fei/eagle-plus/net-em/net-em/net_em/envs/mm_traces/50mbps.trace --downlink-trace=/home/fei/eagle-plus/net-em/net-em/net_em/envs/mm_traces/50mbps.trace --prepend-mm-cmds='mm-delay 40' --append-mm-cmds='--uplink-queue=droptail --uplink-queue-args=packets=300'
+```
+
 ## Pantheon analysis
 To analyze test results, run
 
