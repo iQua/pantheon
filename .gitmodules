@@ -77,3 +77,4 @@
 [submodule "third_party/eagle-plus"]
 	path = third_party/eagle-plus
 	url = https://github.com/iQua/eagle-plus
+	ignore = dirty
