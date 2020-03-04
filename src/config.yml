@@ -169,7 +169,7 @@ schemes:
     marker: '+'
   pythonBBR-plus:
     name : PythonBBR-plus
-    color: blue
+    color: violet
     marker: '^'
   aurora:
     name: Aurora
