@@ -16,12 +16,12 @@ def main():
 
         if args.option == 'sender':
             cmd = ['python3', send_src, args.port, '--expert', 'pythonBBR']
-            subprocess.check_output(cmd)
+            check_call(cmd)
             return
 
         if args.option == 'receiver':
             cmd = [recv_src, 'receive', args.ip, args.port]
-            subprocess.check_output(cmd)
+            check_call(cmd)
             return
 
 if __name__ == "__main__":
