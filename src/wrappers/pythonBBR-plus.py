@@ -15,13 +15,11 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3', send_src, args.port, '--expert', 'pythonBBR']
+            cmd = ['python3', send_src, args.port, '--expert']
             check_call(cmd)
             return
 
         if args.option == 'receiver':
-            cmd = [recv_src, 'receive', args.ip, args.port]
-            check_call(cmd)
             return
 
 if __name__ == "__main__":

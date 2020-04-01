@@ -11,11 +11,12 @@ def main():
         cc_repo = path.join(context.third_party_dir, 'eagle-plus')
         send_src = path.join(cc_repo, 'net-em/net-em/net_em/envs', 'example_xentropy.py')
         recv_src = path.join(cc_repo, 'net-em/net-em/net_em/envs/connect-Eagle', 'connect')
+        model_src = 'training_models/model-xentropy-70iter-rw443.pt'
         if args.option == 'setup':
             return
 
         if args.option == 'sender':
-            cmd = ['python3', send_src, args.port]
+            cmd = ['python3', send_src, args.port, '--model', model_src]
             check_call(cmd)
             return
 
