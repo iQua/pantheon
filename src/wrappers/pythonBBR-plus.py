@@ -20,6 +20,8 @@ def main():
             return
 
         if args.option == 'receiver':
+            cmd = [recv_src, 'receive', args.ip, args.port]
+            check_call(cmd)
             return
 
 if __name__ == "__main__":
