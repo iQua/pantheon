@@ -15,7 +15,7 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3', send_src, args.port, '--expert']
+            cmd = ['python3', send_src, args.port, '--expert', '--return_recent_meas']
             check_call(cmd)
             return
 
