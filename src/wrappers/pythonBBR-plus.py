@@ -10,8 +10,13 @@ def main():
         args = arg_parser.sender_first()
         cc_repo = path.join(context.third_party_dir, 'eagle-plus')
 	send_src = path.join(cc_repo, 'net-em/net-em/net_em/envs', 'example_xentropy.py')
-        recv_src = path.join(cc_repo, 'net-em/net-em/net_em/envs/connect-Eagle', 'connect')
+        conn_src = path.join(cc_repo, 'net-em/net-em/net_em/envs/connect-Eagle')
+        cmake_src = path.join(conn_src, 'build.sh')
+        recv_src = path.join(conn_src, 'connect')
+
         if args.option == 'setup':
+            cmd = ['bash', cmake_src]
+            check_call(cmd, cwd=conn_src)
             return
 
         if args.option == 'sender':
