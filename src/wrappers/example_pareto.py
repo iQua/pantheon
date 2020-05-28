@@ -13,9 +13,11 @@ def main():
         conn_src = path.join(cc_repo, 'net-em/net-em/net_em/envs/connect-Eagle')
         cmake_src = path.join(conn_src, 'build.sh')
         recv_src = path.join(conn_src, 'connect')
+        # designate a trained model here (default path: cc_repo/net-em/.../envs/models/)
         model_src = 'training_models/model-xentropy-505iter-rw97.pt'
         
         if args.option == 'setup':
+            # build C++ connection program
             cmd = ['bash', cmake_src]
             check_call(cmd, cwd=conn_src)
             return
