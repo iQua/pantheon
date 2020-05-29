@@ -181,6 +181,7 @@ class Plot(object):
             # gather all time-varying tput and delay into one file of each run for all cc
             all_tput_path = path.join(self.data_dir, 'all_throughput_run' + str(run_id) + '.log')
             all_delay_path = path.join(self.data_dir, 'all_delay_run' + str(run_id) + '.log')
+            # TODO: move into tunnel_graph, separate 99th, mean delay graph path
             with open(all_tput_path, 'w') as all_tput_log:
                 all_tput_log.write("Scheme\tTraffic\tTime (s)\tThroughput (Mbit/s)\n")
             with open(all_delay_path, 'w') as all_delay_log:
@@ -245,7 +246,7 @@ class Plot(object):
             ax.set_xlim(x_min, x_max)
             ax.xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
 
-    def plot_throughput_delay(self, data):
+    def plot_throughput_delay(self, measure, data):
         min_raw_delay = sys.maxint
         min_mean_delay = sys.maxint
         max_raw_delay = -sys.maxint
@@ -260,7 +261,8 @@ class Plot(object):
                 sys.stderr.write('No performance data for scheme %s\n' % cc)
                 continue
 
-            value = data[cc]
+            # measure is among 95th percentile, 99th percentile, mean
+            value = data[cc][measure]
             cc_name = schemes_config[cc]['name']
             color = schemes_config[cc]['color']
             marker = schemes_config[cc]['marker']
@@ -298,7 +300,13 @@ class Plot(object):
             if yticks[0] < 0:
                 ax.set_ylim(bottom=0)
 
-            xlabel = '95th percentile one-way delay (ms)'
+            if measure == '95th':
+                tag = '95th percentile'
+            elif measure == '99th':
+                tag = '99th percentile'
+            elif measure == 'mean':
+                tag = 'Average'
+            xlabel = tag + ' one-way delay (ms)'
             ax.set_xlabel(xlabel, fontsize=12)
             ax.set_ylabel('Average throughput (Mbit/s)', fontsize=12)
             ax.grid()
@@ -310,7 +318,7 @@ class Plot(object):
 
         for graph_format in ['svg', 'pdf']:
             raw_summary = path.join(
-                self.data_dir, 'pantheon_summary.%s' % graph_format)
+                self.data_dir, 'pantheon_summary_delay_%s.%s' % (measure, graph_format))
             fig_raw.savefig(raw_summary, dpi=300, bbox_extra_artists=(lgd,),
                             bbox_inches='tight', pad_inches=0.2)
 
@@ -320,7 +328,7 @@ class Plot(object):
 
         for graph_format in ['svg', 'pdf']:
             mean_summary = path.join(
-                self.data_dir, 'pantheon_summary_mean.%s' % graph_format)
+                self.data_dir, 'pantheon_summary_mean_delay_%s.%s' % (measure, graph_format))
             fig_mean.savefig(mean_summary, dpi=300,
                              bbox_inches='tight', pad_inches=0.2)
 
@@ -352,16 +360,21 @@ class Plot(object):
 
         all_perf_path = path.join(self.data_dir, 'all_perf.log')
         with open(all_perf_path, 'w') as all_perf_log:
-            all_perf_log.write('Scheme\tAvg throughput (Mbit/s)\tAvg delay (ms)\tAvg loss rate\n')
+            all_perf_log.write('Scheme(all runs)\tAvg throughput (Mbit/s)\tAvg 95th delay (ms)\tAvg 99th delay (ms)\tAvg mean delay (ms)\tAvg loss rate\n')
 
         data_for_plot = {}
         data_for_json = {}
 
         for cc in perf_data:
-            data_for_plot[cc] = []
+            data_for_plot[cc] = {}
+            data_for_plot[cc]['95th'] = []
+            data_for_plot[cc]['99th'] = []
+            data_for_plot[cc]['mean'] = []
             data_for_json[cc] = {}
             sum_tput = 0
-            sum_delay = 0
+            sum_delay_95th = 0
+            sum_delay_99th = 0
+            sum_delay_mean = 0
             sum_loss = 0
             valid_run_times = 0
             
@@ -371,12 +384,22 @@ class Plot(object):
                     continue
 
                 tput = perf_data[cc][run_id]['throughput']
-                delay = perf_data[cc][run_id]['delay']
+                delay_95th = perf_data[cc][run_id]['delay_95th']
+                delay_99th = perf_data[cc][run_id]['delay_99th']
+                delay_mean = perf_data[cc][run_id]['delay_mean']
                 loss = perf_data[cc][run_id]['loss']
 
-                if tput is None or delay is None:
+                if tput is None or delay_95th is None:
                     continue
-                data_for_plot[cc].append((tput, delay))
+                data_for_plot[cc]['95th'].append((tput, delay_95th))
+
+                if tput is None or delay_99th is None:
+                    continue
+                data_for_plot[cc]['99th'].append((tput, delay_99th))
+
+                if tput is None or delay_mean is None:
+                    continue
+                data_for_plot[cc]['mean'].append((tput, delay_mean))
 
                 flow_data = perf_data[cc][run_id]['flow_data']
                 if flow_data is not None:
@@ -385,26 +408,34 @@ class Plot(object):
                 # calculate the sum performance of all runs for every cc
                 valid_run_times += 1
                 sum_tput += tput
-                sum_delay += delay
+                sum_delay_95th += delay_95th
+                sum_delay_99th += delay_99th
+                sum_delay_mean += delay_mean
                 sum_loss += loss
 
                 # gather cc performance data into one file
                 # with open(all_perf_path, 'a') as all_perf_log:
-                #     all_perf_log.write('%s %d %.2f %.2f %.6f\n' % (cc, run_id, tput, delay, loss))
+                #     all_perf_log.write('%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.6f\n' %
+                #                        (cc, run_id, tput, delay_95th, delay_99th, delay_mean, loss))
 
             # calculate the average performance of all runs for every cc
             avg_tput = (float(sum_tput) / valid_run_times) if valid_run_times > 0 else 0 
-            avg_delay = float(sum_delay) / valid_run_times if valid_run_times > 0 else 0 
+            avg_delay_95th = float(sum_delay_95th) / valid_run_times if valid_run_times > 0 else 0
+            avg_delay_99th = float(sum_delay_99th) / valid_run_times if valid_run_times > 0 else 0
+            avg_delay_mean = float(sum_delay_mean) / valid_run_times if valid_run_times > 0 else 0
             avg_loss = float(sum_loss) / valid_run_times if valid_run_times > 0 else 0 
 
             # gather avg cc performance data of all run into one file
             with open(all_perf_path, 'a') as all_perf_log:
-                all_perf_log.write('%s\t%.2f\t%.2f\t%.6f\n' % (cc, avg_tput, avg_delay, avg_loss))
+                all_perf_log.write('%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.6f\n' %
+                                   (cc, avg_tput, avg_delay_95th, avg_delay_99th, avg_delay_mean, avg_loss))
 
         if not self.no_graphs:
-            # self.plot_all_throughput_graph()
+            self.plot_all_throughput_graph()
             # self.plot_all_delay_graph()
-            self.plot_throughput_delay(data_for_plot)
+            self.plot_throughput_delay('95th', data_for_plot)
+            self.plot_throughput_delay('99th', data_for_plot)
+            self.plot_throughput_delay('mean', data_for_plot)
 
         plt.close('all')
 
