@@ -339,7 +339,6 @@ class Plot(object):
 
     def plot_all_ingress_graph(self):
         sns.set(style="darkgrid")
-        # sns.despine()
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
             data = pd.read_csv(data_path, iterator=True, sep="\t", chunksize=1000)
@@ -348,16 +347,18 @@ class Plot(object):
             plt.ylabel('Sending Rate (Mbit/s)')
             plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
             plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), bbox_inches='tight')
+            plt.clf()
 
     def plot_all_delay_graph(self):
         sns.set(style="ticks")
+        sns.despine()
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
             data = pd.read_csv(data_path, sep="\t")
             sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
-            # plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
+            plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
             plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), bbox_inches='tight')
-
+            plt.clf()
 
     def run(self):
         perf_data, stats_logs = self.eval_performance()
