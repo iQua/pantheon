@@ -184,7 +184,7 @@ class Plot(object):
             with open(all_tput_path, 'w') as all_tput_log:
                 all_tput_log.write("Scheme\tTraffic\tTime (s)\tThroughput (Mbit/s)\n")
             with open(all_delay_path, 'w') as all_delay_log:
-                all_delay_log.write("Scheme\tTime (s)\t95th Percentile Delay (ms)\t99th Percentile Delay (ms)\tMean Delay (ms)\n")
+                all_delay_log.write("Scheme\tTime (s)\tDelay (ms)\n")
 
             perf_data[cc][run_id] = pool.apply_async(
                 self.parse_tunnel_log, args=(cc, run_id, all_tput_path, all_delay_path))
@@ -336,7 +336,7 @@ class Plot(object):
             'graphs in %s\n' % self.data_dir)
 
     def plot_all_ingress_graph(self):
-        sns.set(style="whitegrid")
+        sns.set(style="darkgrid")
         # sns.despine()
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
@@ -434,7 +434,7 @@ class Plot(object):
 
         if not self.no_graphs:
             self.plot_all_ingress_graph()
-            # self.plot_all_delay_graph()
+            self.plot_all_delay_graph()
             self.plot_throughput_delay('95th', data_for_plot)
             self.plot_throughput_delay('99th', data_for_plot)
             self.plot_throughput_delay('mean', data_for_plot)
