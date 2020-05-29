@@ -7,13 +7,13 @@ import itertools
 import numpy as np
 import matplotlib_agg
 import matplotlib.pyplot as plt
-
+from multiprocessing import Lock
 import arg_parser
 
 
 class TunnelGraph(object):
     def __init__(self, cc, tunnel_log, all_tput_log, all_delay_log,
-                 throughput_graph=None, delay_graph=None,
+                 throughput_graph=None, delay_graph=None, lock=Lock(),
                  ms_per_bin=150):
         self.cc = cc
         self.tunnel_log = tunnel_log
@@ -28,6 +28,7 @@ class TunnelGraph(object):
         self.delay_95th_graph = pfx + "95th_" + sfx
         self.delay_99th_graph = pfx + "99th_" + sfx
         self.delay_mean_graph = pfx + "mean_" + sfx
+        self.lock = lock
 
     def ms_to_bin(self, ts, first_ts):
         return int((ts - first_ts) / self.ms_per_bin)
@@ -274,6 +275,7 @@ class TunnelGraph(object):
                 total_delays, 99, interpolation='nearest')
             self.total_delay_mean = np.mean(total_delays)
 
+        self.lock.acquire()
         # gather all time-varying tput and delay into one file of each run for all cc (only one flow)
         with open(self.all_tput_log, 'a') as all_tput_log:
             for i in range(len(self.egress_t[1])):
@@ -285,6 +287,7 @@ class TunnelGraph(object):
         with open(self.all_delay_log, 'a') as all_delay_log:
             for i in range(len(self.delays_t[1])):
                 all_delay_log.write('%s\t%f\t%.2f\n' % (self.cc, self.delays_t[1][i], self.delays[1][i]))
+        self.lock.release()
 
     def flip(self, items, ncol):
         return list(itertools.chain(*[items[i::ncol] for i in range(ncol)]))

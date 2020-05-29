@@ -68,7 +68,7 @@ class Plot(object):
 
         return expt_title
 
-    def parse_tunnel_log(self, cc, run_id, all_tput_path, all_delay_path):
+    def parse_tunnel_log(self, cc, run_id, all_tput_path, all_delay_path, lock):
         log_prefix = cc
         if self.flows == 0:
             log_prefix += '_mm'
@@ -107,7 +107,8 @@ class Plot(object):
                     all_delay_log=all_delay_path,
                     tunnel_log=log_path,
                     throughput_graph=tput_graph_path,
-                    delay_graph=delay_graph_path
+                    delay_graph=delay_graph_path,
+                    lock=lock
                 ).run()
             except Exception as exception:
                 sys.stderr.write('Error: %s\n' % exception)
@@ -174,6 +175,7 @@ class Plot(object):
         cc_id = 0
         run_id = 1
         pool = ThreadPool(processes=multiprocessing.cpu_count())
+        lock = multiprocessing.Lock()
 
         while cc_id < len(self.cc_schemes):
             cc = self.cc_schemes[cc_id]
@@ -187,7 +189,7 @@ class Plot(object):
                 all_delay_log.write("Scheme\tTime (s)\tDelay (ms)\n")
 
             perf_data[cc][run_id] = pool.apply_async(
-                self.parse_tunnel_log, args=(cc, run_id, all_tput_path, all_delay_path))
+                self.parse_tunnel_log, args=(cc, run_id, all_tput_path, all_delay_path, lock))
 
             run_id += 1
             if run_id > self.run_times:
@@ -352,8 +354,8 @@ class Plot(object):
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
             data = pd.read_csv(data_path, sep="\t")
-            sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", data=data)
-            plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
+            sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
+            # plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
             plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), bbox_inches='tight')
 
 
