@@ -1,0 +1,4 @@
+Scheme(all runs)	Avg throughput (Mbit/s)	Avg 95th delay (ms)	Avg 99th delay (ms)	Avg mean delay (ms)	Avg loss rate
+pcc	39.80	53.68	77.66	42.81	0.008581
+bbr	48.17	110.64	112.45	85.78	0.017586
+cubic	49.15	104.64	111.62	76.29	0.005341
