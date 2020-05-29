@@ -114,8 +114,8 @@ class Report(object):
 
     def create_table(self, data):
         align = ' c | c'
-        for data_t in ['tput', 'delay', 'loss']:
-            align += ' | ' + ' '.join(['Y' for _ in xrange(self.flows)])
+        for data_t in ['tput', 'delay_95th', 'delay_99th', 'delay_mean', 'loss']:
+            align += ' | ' + ' '.join(['X' for _ in xrange(self.flows)])
         align += ' '
 
         flow_cols = ' & '.join(
@@ -126,10 +126,12 @@ class Report(object):
             '\\begin{landscape}\n'
             '\\centering\n'
             '\\begin{tabularx}{%(width)s\linewidth}{%(align)s}\n'
-            '& & \\multicolumn{%(flows)d}{c|}{mean avg tput (Mbit/s)}'
-            ' & \\multicolumn{%(flows)d}{c|}{mean 95th-\\%%ile delay (ms)}'
-            ' & \\multicolumn{%(flows)d}{c}{mean loss rate (\\%%)} \\\\\n'
-            'scheme & \\# runs & %(flow_cols)s & %(flow_cols)s & %(flow_cols)s'
+            '& & \\multicolumn{%(flows)d}{p{2cm}|}{mean avg tput \\ (Mbit/s)}'
+            ' & \\multicolumn{%(flows)d}{p{2cm}|}{mean 95th-\\%%ile delay (ms)}'
+            ' & \\multicolumn{%(flows)d}{p{2cm}|}{mean 99th-\\%%ile delay (ms)}'
+            ' & \\multicolumn{%(flows)d}{p{2cm}|}{mean avg delay (ms)}'
+            ' & \\multicolumn{%(flows)d}{p{2cm}}{mean loss rate (\\%%)} \\\\\n'
+            'scheme & \\# runs & %(flow_cols)s & %(flow_cols)s & %(flow_cols)s & %(flow_cols)s & %(flow_cols)s'
             ' \\\\\n'
             '\\hline\n'
         ) % {'width': table_width,
@@ -139,7 +141,7 @@ class Report(object):
 
         for cc in self.cc_schemes:
             flow_data = {}
-            for data_t in ['tput', 'delay', 'loss']:
+            for data_t in ['tput', 'delay_95th', 'delay_99th', 'delay_mean', 'loss']:
                 flow_data[data_t] = []
                 for flow_id in xrange(1, self.flows + 1):
                     if data[cc][flow_id][data_t]:
@@ -150,11 +152,13 @@ class Report(object):
 
             table += (
                 '%(name)s & %(valid_runs)s & %(flow_tputs)s & '
-                '%(flow_delays)s & %(flow_losses)s \\\\\n'
+                '%(flow_delays_95th)s & %(flow_delays_99th)s & %(flow_delays_mean)s & %(flow_losses)s \\\\\n'
             ) % {'name': data[cc]['name'],
                  'valid_runs': data[cc]['valid_runs'],
                  'flow_tputs': ' & '.join(flow_data['tput']),
-                 'flow_delays': ' & '.join(flow_data['delay']),
+                 'flow_delays_95th': ' & '.join(flow_data['delay_95th']),
+                 'flow_delays_99th': ' & '.join(flow_data['delay_99th']),
+                 'flow_delays_mean': ' & '.join(flow_data['delay_mean']),
                  'flow_losses': ' & '.join(flow_data['loss'])}
 
         table += (
@@ -168,8 +172,12 @@ class Report(object):
         data = {}
 
         re_tput = lambda x: re.match(r'Average throughput: (.*?) Mbit/s', x)
-        re_delay = lambda x: re.match(
+        re_delay_95th = lambda x: re.match(
             r'95th percentile per-packet one-way delay: (.*?) ms', x)
+        re_delay_99th = lambda x: re.match(
+            r'99th percentile per-packet one-way delay: (.*?) ms', x)
+        re_delay_mean = lambda x: re.match(
+            r'Average per-packet one-way delay: (.*?) ms', x)
         re_loss = lambda x: re.match(r'Loss rate: (.*?)%', x)
 
         for cc in self.cc_schemes:
@@ -184,7 +192,9 @@ class Report(object):
                 data[cc][flow_id] = {}
 
                 data[cc][flow_id]['tput'] = []
-                data[cc][flow_id]['delay'] = []
+                data[cc][flow_id]['delay_95th'] = []
+                data[cc][flow_id]['delay_99th'] = []
+                data[cc][flow_id]['delay_mean'] = []
                 data[cc][flow_id]['loss'] = []
 
             for run_id in xrange(1, 1 + self.run_times):
@@ -214,10 +224,20 @@ class Report(object):
                             ret = float(ret.group(1))
                             data[cc][flow_id]['tput'].append(ret)
 
-                        ret = re_delay(stats_log.readline())
+                        ret = re_delay_95th(stats_log.readline())
                         if ret:
                             ret = float(ret.group(1))
-                            data[cc][flow_id]['delay'].append(ret)
+                            data[cc][flow_id]['delay_95th'].append(ret)
+
+                        ret = re_delay_99th(stats_log.readline())
+                        if ret:
+                            ret = float(ret.group(1))
+                            data[cc][flow_id]['delay_99th'].append(ret)
+
+                        ret = re_delay_mean(stats_log.readline())
+                        if ret:
+                            ret = float(ret.group(1))
+                            data[cc][flow_id]['delay_mean'].append(ret)
 
                         ret = re_loss(stats_log.readline())
                         if ret:
@@ -235,9 +255,15 @@ class Report(object):
         return self.create_table(data)
 
     def include_summary(self):
-        raw_summary = path.join(self.data_dir, 'pantheon_summary.pdf')
-        mean_summary = path.join(
-            self.data_dir, 'pantheon_summary_mean.pdf')
+        raw_summary_delay_95th = path.join(self.data_dir, 'pantheon_summary_delay_95th.pdf')
+        mean_summary_delay_95th = path.join(
+            self.data_dir, 'pantheon_summary_mean_delay_95th.pdf')
+        raw_summary_delay_99th = path.join(self.data_dir, 'pantheon_summary_delay_99th.pdf')
+        mean_summary_delay_99th = path.join(
+            self.data_dir, 'pantheon_summary_mean_delay_99th.pdf')
+        raw_summary_delay_mean = path.join(self.data_dir, 'pantheon_summary_delay_mean.pdf')
+        mean_summary_delay_mean = path.join(
+            self.data_dir, 'pantheon_summary_mean_delay_mean.pdf')
 
         metadata_desc = self.describe_metadata()
 
@@ -258,7 +284,15 @@ class Report(object):
             '\\PantheonFig{%s}\n\n'
             '\\PantheonFig{%s}\n\n'
             '\\newpage\n\n'
-            % (metadata_desc, mean_summary, raw_summary))
+            '\\PantheonFig{%s}\n\n'
+            '\\PantheonFig{%s}\n\n'
+            '\\newpage\n\n'
+            '\\PantheonFig{%s}\n\n'
+            '\\PantheonFig{%s}\n\n'
+            '\\newpage\n\n'
+            % (metadata_desc, mean_summary_delay_95th, raw_summary_delay_95th,
+               mean_summary_delay_99th, raw_summary_delay_99th,
+               mean_summary_delay_mean, raw_summary_delay_mean))
 
         self.latex.write('%s\\newpage\n\n' % self.summary_table())
 
@@ -288,7 +322,7 @@ class Report(object):
                     link_directions.append('acklink')
 
                 for link_t in link_directions:
-                    for metric_t in ['throughput', 'delay']:
+                    for metric_t in ['throughput', '95th_delay', '99th_delay', 'mean_delay']:
                         graph_path = path.join(
                             self.data_dir, cc + '_%s_%s_run%s.png' %
                             (link_t, metric_t, run_id))
@@ -302,7 +336,10 @@ class Report(object):
                     '\\newpage\n\n'
                     'Run %(run_id)s: Report of %(cc_name)s --- Data Link\n\n'
                     '\\PantheonFig{%(datalink_throughput)s}\n\n'
-                    '\\PantheonFig{%(datalink_delay)s}\n\n'
+                    '\\PantheonFig{%(datalink_95th_delay)s}\n\n'
+                    '\\newpage\n\n' 
+                    '\\PantheonFig{%(datalink_99th_delay)s}\n\n'
+                    '\\PantheonFig{%(datalink_mean_delay)s}\n\n'
                     '\\newpage\n\n' % str_dict)
 
                 if self.include_acklink:
@@ -310,7 +347,10 @@ class Report(object):
                         'Run %(run_id)s: '
                         'Report of %(cc_name)s --- ACK Link\n\n'
                         '\\PantheonFig{%(acklink_throughput)s}\n\n'
-                        '\\PantheonFig{%(acklink_delay)s}\n\n'
+                        '\\PantheonFig{%(acklink_95th_delay)s}\n\n'
+                        '\\newpage\n\n'
+                        '\\PantheonFig{%(acklink_99th_delay)s}\n\n'
+                        '\\PantheonFig{%(acklink_mean_delay)s}\n\n'
                         '\\newpage\n\n' % str_dict)
 
         self.latex.write('\\end{document}')
