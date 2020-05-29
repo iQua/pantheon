@@ -103,8 +103,8 @@ class Plot(object):
             try:
                 tunnel_results = tunnel_graph.TunnelGraph(
                     cc=cc,
-                    all_tput_graph=all_tput_path,
-                    all_delay_graph=all_delay_path,
+                    all_tput_log=all_tput_path,
+                    all_delay_log=all_delay_path,
                     tunnel_log=log_path,
                     throughput_graph=tput_graph_path,
                     delay_graph=delay_graph_path
@@ -181,11 +181,10 @@ class Plot(object):
             # gather all time-varying tput and delay into one file of each run for all cc
             all_tput_path = path.join(self.data_dir, 'all_throughput_run' + str(run_id) + '.log')
             all_delay_path = path.join(self.data_dir, 'all_delay_run' + str(run_id) + '.log')
-            # TODO: move into tunnel_graph, separate 99th, mean delay graph path
             with open(all_tput_path, 'w') as all_tput_log:
                 all_tput_log.write("Scheme\tTraffic\tTime (s)\tThroughput (Mbit/s)\n")
             with open(all_delay_path, 'w') as all_delay_log:
-                all_delay_log.write("Scheme\tTime (s)\tDelay (ms)\n")
+                all_delay_log.write("Scheme\tTime (s)\t95th Percentile Delay (ms)\t99th Percentile Delay (ms)\tMean Delay (ms)\n")
 
             perf_data[cc][run_id] = pool.apply_async(
                 self.parse_tunnel_log, args=(cc, run_id, all_tput_path, all_delay_path))
@@ -336,20 +335,23 @@ class Plot(object):
             'Saved throughput graphs, delay graphs, and summary '
             'graphs in %s\n' % self.data_dir)
 
-    def plot_all_throughput_graph(self):
-        sns.set(style="ticks")
+    def plot_all_ingress_graph(self):
+        sns.set(style="whitegrid")
+        # sns.despine()
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
-            data = pd.read_table(data_path, sep="\t")
-            sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Traffic", data=data)
+            data = pd.read_csv(data_path, iterator=True, sep="\t", chunksize=1000)
+            ingress = pd.concat([chunk[chunk['Traffic'] == 'ingress'] for chunk in data])
+            sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=ingress)
+            plt.ylabel('Sending Rate (Mbit/s)')
             plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
-            plt.savefig(path.join(self.data_dir, 'all_throughput_run' + str(i) + '.pdf'), bbox_inches='tight')
+            plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), bbox_inches='tight')
 
     def plot_all_delay_graph(self):
         sns.set(style="ticks")
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
-            data = pd.read_table(data_path, sep="\t")
+            data = pd.read_csv(data_path, sep="\t")
             sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", data=data)
             plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
             plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), bbox_inches='tight')
@@ -431,7 +433,7 @@ class Plot(object):
                                    (cc, avg_tput, avg_delay_95th, avg_delay_99th, avg_delay_mean, avg_loss))
 
         if not self.no_graphs:
-            self.plot_all_throughput_graph()
+            self.plot_all_ingress_graph()
             # self.plot_all_delay_graph()
             self.plot_throughput_delay('95th', data_for_plot)
             self.plot_throughput_delay('99th', data_for_plot)

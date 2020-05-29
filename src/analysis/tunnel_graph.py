@@ -12,15 +12,15 @@ import arg_parser
 
 
 class TunnelGraph(object):
-    def __init__(self, cc, tunnel_log, all_tput_graph, all_delay_graph,
+    def __init__(self, cc, tunnel_log, all_tput_log, all_delay_log,
                  throughput_graph=None, delay_graph=None,
                  ms_per_bin=150):
         self.cc = cc
         self.tunnel_log = tunnel_log
         self.delay_graph = delay_graph
         self.ms_per_bin = ms_per_bin
-        self.all_tput_log = all_tput_graph
-        self.all_delay_log = all_delay_graph
+        self.all_tput_log = all_tput_log
+        self.all_delay_log = all_delay_log
         # custom delay graph path
         ind = self.delay_graph.find('delay')
         pfx, sfx = self.delay_graph[0:ind], self.delay_graph[ind:]
@@ -498,8 +498,8 @@ def main():
     tunnel_graph = TunnelGraph(
         cc=args.cc,
         tunnel_log=args.tunnel_log,
-        all_tput_graph=args.all_tput_log,
-        all_delay_graph=args.all_delay_log,
+        all_tput_log=args.all_tput_log,
+        all_delay_log=args.all_delay_log,
         throughput_graph=args.throughput_graph,
         delay_graph=args.delay_graph,
         ms_per_bin=args.ms_per_bin)
