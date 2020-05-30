@@ -347,7 +347,7 @@ class Plot(object):
             sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=ingress)
             plt.ylabel('Sending Rate (Mbit/s)')
             plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
-            plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), bbox_inches='tight')
+            plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.svg'), bbox_inches='tight')
             plt.clf()
 
     def plot_all_delay_graph(self):
@@ -358,7 +358,7 @@ class Plot(object):
             data = pd.read_csv(data_path, sep="\t")
             sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
             plt.legend(bbox_to_anchor=(1.02, 0), loc=3, borderaxespad=0)
-            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), bbox_inches='tight')
+            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.svg'), bbox_inches='tight')
             plt.clf()
 
     def run(self):
