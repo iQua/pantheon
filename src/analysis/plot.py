@@ -338,6 +338,7 @@ class Plot(object):
             'graphs in %s\n' % self.data_dir)
 
     def plot_all_ingress_graph(self):
+        plt.figure(figsize=(12, 6))
         sns.set(style="darkgrid")
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
