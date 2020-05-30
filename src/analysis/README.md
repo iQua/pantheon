@@ -9,8 +9,10 @@
 * It gathers the time-varying throughput and time-varying delay of all cc schemes in each run in **all_throughput_run_id.log** (both ingress and egress data) and **all_delay_run_id.log** respectively, and then plots `sending rate - time` graph **all_ingress_run_id.pdf** and `delay - time` graph **all_delay_run_id.pdf**, saved in the specified output directory `--data-dir DIR`.
 
 
-> example: <a><img src="https://github.com/iQua/pantheon/blob/master/src/analysis/plot_sample/data/all_ingress_run1.svg" align="top" height="500" width="500" ></a>
-> example: <a><img src="https://github.com/iQua/pantheon/blob/master/src/analysis/plot_sample/data/all_delay_run1.svg" align="top" height="500" width="500" ></a>
+> **sending rate vs. time** (style:whitegrid): <a><img src="https://github.com/iQua/pantheon/blob/master/src/analysis/plot_sample/data/all_ingress_run1.svg" align="top" height="500" width="500" ></a>
+
+
+> **delay vs. time** (style:ticks): <a><img src="https://github.com/iQua/pantheon/blob/master/src/analysis/plot_sample/data/all_delay_run1.svg" align="top" height="500" width="500" ></a>
 
 * It calculates the average performance of all runs (e.g. `pantheon/src/experiments/test.py (..other args..) --runtimes 10`) for every tested cc scheme in `analysis/plot.py: run()` and gather all the data into one log file **all_perf.log** located in `DIR`.
 This helps show the average performance of cc schemes under different experiment scenarios, e.g. when testing on mahimahi links of different *random loss rate* or *buffer size*. For example, if we want to compare how cc schemes perform on links with different buffer size, we can follow these steps:
