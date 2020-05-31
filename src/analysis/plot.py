@@ -365,8 +365,8 @@ class Plot(object):
             ingress['Time (s)'] = ingress['Time (s)'] - start_t
             sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=ingress)
             plt.gca().grid()
-            plt.gca().set_ylim(ymin=0)
-            plt.gca().set_xlim(xmin=0)
+            # plt.gca().set_ylim(ymin=0)
+            # plt.gca().set_xlim(xmin=0)
             plt.ylabel('Sending Rate (Mbit/s)')
             if self.lgd_handles is None:
                 self.lgd_handles, self.lgd_labels = plt.gca().get_legend_handles_labels()
@@ -382,8 +382,8 @@ class Plot(object):
             data['Time (s)'] = data['Time (s)'] - start_t
             sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
             plt.gca().grid()
-            plt.gca().set_ylim(ymin=0)
-            plt.gca().set_xlim(xmin=0)
+            # plt.gca().set_ylim(ymin=0)
+            # plt.gca().set_xlim(xmin=0)
             lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
             plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.svg'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
