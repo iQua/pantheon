@@ -14,7 +14,7 @@ def main():
         cmake_src = path.join(conn_src, 'build.sh')
         recv_src = path.join(conn_src, 'connect')
         # designate a trained model here (default path: cc_repo/net-em/.../envs/models/)
-        model_src = 'training_models/model-xentropy-505iter-rw97.pt'
+        model_src = 'training_models/model-xentropy-390iter-rw149.pt'
         
         if args.option == 'setup':
             # build C++ connection program
@@ -23,7 +23,7 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3', send_src, args.port, '--return_recent_meas', '--pass_hidden_state', '--with_elite_buffer', '--model', model_src]
+            cmd = ['python3', send_src, args.port, '--return_recent_meas', '--pass_hidden_states', '--model', model_src]
             check_call(cmd)
             return
 
