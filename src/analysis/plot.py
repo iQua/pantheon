@@ -339,7 +339,7 @@ class Plot(object):
 
     def plot_all_ingress_graph(self):
         plt.figure(figsize=(12, 6))
-        sns.set(style="darkgrid")
+        sns.set(style="whitegrid")
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
             data = pd.read_csv(data_path, iterator=True, sep="\t", chunksize=1000)
@@ -351,7 +351,7 @@ class Plot(object):
             plt.clf()
 
     def plot_all_delay_graph(self):
-        sns.set(style="ticks")
+        sns.set(style="whitegrid")
         sns.despine()
         for i in range(1, self.run_times + 1):
             data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
