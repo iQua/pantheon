@@ -339,28 +339,52 @@ class Plot(object):
             'Saved throughput graphs, delay graphs, and summary '
             'graphs in %s\n' % self.data_dir)
 
-    def plot_all_perf_graph(self):
+    def plot_all_perf_graph(self, perf_data):
         plt.figure(figsize=(12, 6))
-        sns.set(style="whitegrid")
-        # plot sending rate - time
+
         for i in range(1, self.run_times + 1):
+            '''plot sending rate vs time'''
+            # find the min start t for all the cc in the same run
+            min_end_t = float('inf')
+            for cc in perf_data:
+                end_t = perf_data[cc][i]['link_capacity_t'][-1]
+                if end_t < min_end_t:
+                    min_end_t = end_t
+                    capacity_cc = cc
+            start_t = min_end_t - self.runtime
+            # clear the blank before flow starts for capacity
+            start_ind = np.argmin(np.abs(np.array(perf_data[capacity_cc][i]['link_capacity_t']) - start_t))
+            active_link_capacity_t = [t - start_t for t in perf_data[capacity_cc][i]['link_capacity_t'][start_ind:]]
+            plt.gca().fill_between(active_link_capacity_t, 0, perf_data[capacity_cc][i]['link_capacity'][start_ind:],
+                         facecolor='linen')
+
             data_path = path.join(self.data_dir, 'all_throughput_run' + str(i) + '.log')
             data = pd.read_csv(data_path, iterator=True, sep="\t", chunksize=1000)
             ingress = pd.concat([chunk[chunk['Traffic'] == 'ingress'] for chunk in data])
+            # clear the blank before flow starts for sending rate
+            ingress['Time (s)'] = ingress['Time (s)'] - start_t
             sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=ingress)
+            plt.gca().grid()
+            plt.gca().set_ylim(ymin=0)
+            plt.gca().set_xlim(xmin=0)
             plt.ylabel('Sending Rate (Mbit/s)')
             if self.lgd_handles is None:
                 self.lgd_handles, self.lgd_labels = plt.gca().get_legend_handles_labels()
-            lgd = plt.legend(self.lgd_handles, self.lgd_labels, bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
+            # [1:] is used to remove legend title
+            lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
             plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.svg'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()
-        # plot delay - time
-        for i in range(1, self.run_times + 1):
+
+            '''plot delay vs time'''
             data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
             data = pd.read_csv(data_path, sep="\t")
+            data['Time (s)'] = data['Time (s)'] - start_t
             sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
-            lgd = plt.legend(self.lgd_handles, self.lgd_labels, bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
+            plt.gca().grid()
+            plt.gca().set_ylim(ymin=0)
+            plt.gca().set_xlim(xmin=0)
+            lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
             plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.svg'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()
@@ -374,6 +398,7 @@ class Plot(object):
 
         data_for_plot = {}
         data_for_json = {}
+        capacity = {}
 
         for cc in perf_data:
             data_for_plot[cc] = {}
@@ -381,13 +406,13 @@ class Plot(object):
             data_for_plot[cc]['99th'] = []
             data_for_plot[cc]['mean'] = []
             data_for_json[cc] = {}
+            capacity[cc] = {}
             sum_tput = 0
             sum_delay_95th = 0
             sum_delay_99th = 0
             sum_delay_mean = 0
             sum_loss = 0
             valid_run_times = 0
-            
 
             for run_id in perf_data[cc]:
                 if perf_data[cc][run_id] is None:
@@ -441,7 +466,7 @@ class Plot(object):
                                    (cc, avg_tput, avg_delay_95th, avg_delay_99th, avg_delay_mean, avg_loss))
 
         if not self.no_graphs:
-            self.plot_all_perf_graph()
+            self.plot_all_perf_graph(perf_data)
             self.plot_throughput_delay('95th', data_for_plot)
             self.plot_throughput_delay('99th', data_for_plot)
             self.plot_throughput_delay('mean', data_for_plot)

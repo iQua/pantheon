@@ -472,6 +472,9 @@ class TunnelGraph(object):
         tunnel_results['loss'] = self.total_loss_rate
         tunnel_results['duration'] = self.total_duration
         tunnel_results['stats'] = self.statistics_string()
+        tunnel_results['link_capacity'] = self.link_capacity
+        tunnel_results['link_capacity_t'] = self.link_capacity_t
+        tunnel_results['avg_capacity'] = self.avg_capacity
 
         flow_data = {}
         flow_data['all'] = {}
@@ -480,6 +483,7 @@ class TunnelGraph(object):
         flow_data['all']['delay_99th'] = self.total_delay_99th
         flow_data['all']['delay_mean'] = self.total_delay_mean
         flow_data['all']['loss'] = self.total_loss_rate
+
 
         for flow_id in self.flows:
             if flow_id != 0:
