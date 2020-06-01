@@ -372,7 +372,7 @@ class Plot(object):
                 self.lgd_handles, self.lgd_labels = plt.gca().get_legend_handles_labels()
             # [1:] is used to remove legend title
             lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
-            plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.svg'), dpi=300,
+            plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()
 
@@ -385,7 +385,7 @@ class Plot(object):
             # plt.gca().set_ylim(ymin=0)
             # plt.gca().set_xlim(xmin=0)
             lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
-            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.svg'), dpi=300,
+            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()
 
