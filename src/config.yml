@@ -91,6 +91,10 @@ schemes:
     name : Pareto
     color: red
     marker: '+'
+  pareto-online:
+    name : Pareto
+    color: red
+    marker: '+'
   pythonBBR-plus:
     name : PythonBBR-plus
     color: violet
