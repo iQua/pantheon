@@ -67,18 +67,10 @@ schemes:
     name: FillP-Sheep
     color: violet
     marker: 'D'
-  eagle-v1:
-    name: Eagle-v1
-    color: gold
-    marker: '+'
-  eagle-v2:
-    name: Eagle-v2
-    color: blue
-    marker: '+'
-  eagle-v3:
-    name: Eagle-v3
-    color: red
-    marker: '+'
+  eagle:
+    name: Eagle
+    color: violet
+    marker: 'D'
   synthesizedBBR:
     name : Synthesized-BBR
     color: blue
@@ -90,11 +82,11 @@ schemes:
   pareto:
     name : Pareto
     color: red
-    marker: '+'
+    marker: '*'
   pareto-online:
     name : Pareto
     color: red
-    marker: '+'
+    marker: '*'
   pythonBBR-plus:
     name : PythonBBR-plus
     color: violet
