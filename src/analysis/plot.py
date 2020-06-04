@@ -33,8 +33,6 @@ class Plot(object):
         self.flows = meta['flows']
         self.runtime = meta['runtime']
         self.expt_title = self.generate_expt_title(meta)
-        self.lgd_handles = None
-        self.lgd_labels = None
 
     def generate_expt_title(self, meta):
         if meta['mode'] == 'local':
@@ -340,6 +338,17 @@ class Plot(object):
             'graphs in %s\n' % self.data_dir)
 
     def plot_all_perf_graph(self, perf_data):
+        dash_styles = ["",
+                       (4, 1.5),
+                       (1, 1),
+                       (3, 1, 1.5, 1),
+                       (5, 1, 1, 1),
+                       (5, 1, 2, 1, 2, 1),
+                       (2, 2, 3, 1.5),
+                       (1, 2.5, 3, 1.2)]
+
+        # schemes_config = utils.parse_config()['schemes']
+        # marker_styles = []
         plt.figure(figsize=(12, 6))
 
         for i in range(1, self.run_times + 1):
@@ -363,31 +372,38 @@ class Plot(object):
             ingress = pd.concat([chunk[chunk['Traffic'] == 'ingress'] for chunk in data])
             # clear the blank before flow starts for sending rate
             ingress['Time (s)'] = ingress['Time (s)'] - start_t
-            sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=ingress)
+
+            # if not marker_styles:
+            #     for cc_name in {cc for cc in ingress['Scheme']}:
+            #         for cc in schemes_config:
+            #             if schemes_config[cc]['name'] == cc_name:
+            #                 marker_styles.append(schemes_config[cc]['marker'])
+            # sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme", markers=marker_styles, data=ingress)
+            sns.lineplot(x="Time (s)", y="Throughput (Mbit/s)", ci=None, hue="Scheme", style="Scheme",
+                         dashes=dash_styles, data=ingress)
             plt.gca().grid()
             # plt.gca().set_ylim(ymin=0)
             # plt.gca().set_xlim(xmin=0)
             plt.ylabel('Sending Rate (Mbit/s)')
-            if self.lgd_handles is None:
-                self.lgd_handles, self.lgd_labels = plt.gca().get_legend_handles_labels()
+            lgd_handles, lgd_labels = plt.gca().get_legend_handles_labels()
             # [1:] is used to remove legend title
-            lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
+            lgd = plt.legend(lgd_handles[1:], lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
             plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()
 
             '''plot delay vs time'''
-            data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
-            data = pd.read_csv(data_path, sep="\t")
-            data['Time (s)'] = data['Time (s)'] - start_t
-            sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=True, data=data)
-            plt.gca().grid()
-            # plt.gca().set_ylim(ymin=0)
-            # plt.gca().set_xlim(xmin=0)
-            lgd = plt.legend(self.lgd_handles[1:], self.lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
-            plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), dpi=300,
-                        bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
-            plt.clf()
+            # data_path = path.join(self.data_dir, 'all_delay_run' + str(i) + '.log')
+            # data = pd.read_csv(data_path, sep="\t")
+            # data['Time (s)'] = data['Time (s)'] - start_t
+            # sns.lineplot(x="Time (s)", y="Delay (ms)", ci=None, hue="Scheme", style="Scheme", dashes=dash_styles, data=data)
+            # plt.gca().grid()
+            # # plt.gca().set_ylim(ymin=0)
+            # # plt.gca().set_xlim(xmin=0)
+            # lgd = plt.legend(lgd_handles[1:], lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
+            # plt.savefig(path.join(self.data_dir, 'all_delay_run' + str(i) + '.pdf'), dpi=300,
+            #             bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
+            # plt.clf()
 
     def run(self):
         perf_data, stats_logs = self.eval_performance()
@@ -463,7 +479,7 @@ class Plot(object):
             # gather avg cc performance data of all run into one file
             with open(all_perf_path, 'a') as all_perf_log:
                 all_perf_log.write('%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.6f\n' %
-                                   (cc, avg_tput, avg_delay_95th, avg_delay_99th, avg_delay_mean, avg_loss))
+                                   (utils.parse_config()['schemes'][cc]['name'], avg_tput, avg_delay_95th, avg_delay_99th, avg_delay_mean, avg_loss))
 
         if not self.no_graphs:
             self.plot_all_perf_graph(perf_data)
