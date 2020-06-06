@@ -18,6 +18,8 @@ import tunnel_graph
 import context
 from helpers import utils
 
+FONT_SIZE = 14
+
 
 class Plot(object):
     def __init__(self, args):
@@ -106,6 +108,7 @@ class Plot(object):
                     all_tput_log=all_tput_path,
                     all_delay_log=all_delay_path,
                     tunnel_log=log_path,
+                    run_time=self.run_times,
                     throughput_graph=tput_graph_path,
                     delay_graph=delay_graph_path,
                     lock=lock
@@ -308,15 +311,15 @@ class Plot(object):
             elif measure == 'mean':
                 tag = 'Average'
             xlabel = tag + ' one-way delay (ms)'
-            ax.set_xlabel(xlabel, fontsize=12)
-            ax.set_ylabel('Average throughput (Mbit/s)', fontsize=12)
+            ax.set_xlabel(xlabel, fontsize=18)
+            ax.set_ylabel('Average throughput (Mbit/s)', fontsize=18)
             ax.grid()
 
         # save pantheon_summary.svg and .pdf
-        ax_raw.set_title(self.expt_title.strip(), y=1.02, fontsize=12)
+        ax_raw.set_title(self.expt_title.strip(), y=1.02, fontsize=18)
         lgd = ax_raw.legend(scatterpoints=1, bbox_to_anchor=(1, 0.5),
-                            loc='center left', fontsize=12)
-
+                            loc='center left', fontsize=18)
+        plt.rc('font', size=FONT_SIZE)
         for graph_format in ['svg', 'pdf']:
             raw_summary = path.join(
                 self.data_dir, 'pantheon_summary_delay_%s.%s' % (measure, graph_format))
@@ -325,7 +328,7 @@ class Plot(object):
 
         # save pantheon_summary_mean.svg and .pdf
         ax_mean.set_title(self.expt_title +
-                          ' (mean of all runs by scheme)', fontsize=12)
+                          ' (mean of all runs by scheme)', fontsize=18)
 
         for graph_format in ['svg', 'pdf']:
             mean_summary = path.join(
@@ -350,6 +353,7 @@ class Plot(object):
         # schemes_config = utils.parse_config()['schemes']
         # marker_styles = []
         plt.figure(figsize=(12, 6))
+        plt.rc('font', size=FONT_SIZE)
 
         for i in range(1, self.run_times + 1):
             '''plot sending rate vs time'''
@@ -387,7 +391,7 @@ class Plot(object):
             plt.ylabel('Sending Rate (Mbit/s)')
             lgd_handles, lgd_labels = plt.gca().get_legend_handles_labels()
             # [1:] is used to remove legend title
-            lgd = plt.legend(lgd_handles[1:], lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=12)
+            lgd = plt.legend(lgd_handles[1:], lgd_labels[1:], bbox_to_anchor=(1.01, 0.5), loc="center left", borderaxespad=0, fontsize=18)
             plt.savefig(path.join(self.data_dir, 'all_ingress_run' + str(i) + '.pdf'), dpi=300,
                         bbox_inches='tight', bbox_extra_artists=(lgd,), pad_inches=0.2)
             plt.clf()

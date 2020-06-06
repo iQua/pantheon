@@ -9,10 +9,13 @@ import matplotlib_agg
 import matplotlib.pyplot as plt
 from multiprocessing import Lock
 import arg_parser
+from helpers import utils
+
+FONT_SIZE = 14
 
 
 class TunnelGraph(object):
-    def __init__(self, cc, tunnel_log, all_tput_log, all_delay_log,
+    def __init__(self, cc, tunnel_log, all_tput_log, all_delay_log, run_time,
                  throughput_graph=None, delay_graph=None, lock=Lock(),
                  ms_per_bin=150):
         self.cc = cc
@@ -21,6 +24,7 @@ class TunnelGraph(object):
         self.ms_per_bin = ms_per_bin
         self.all_tput_log = all_tput_log
         self.all_delay_log = all_delay_log
+        self.run_time = run_time
         # custom delay graph path
         ind = self.delay_graph.find('delay')
         pfx, sfx = self.delay_graph[0:ind], self.delay_graph[ind:]
@@ -276,17 +280,18 @@ class TunnelGraph(object):
             self.total_delay_mean = np.mean(total_delays)
 
         self.lock.acquire()
+        schemes_config = utils.parse_config()['schemes']
         # gather all time-varying tput and delay into one file of each run for all cc (only one flow)
         with open(self.all_tput_log, 'a') as all_tput_log:
             for i in range(len(self.egress_t[1])):
                 all_tput_log.write(
-                    '%s\tegress\t%.2f\t%.2f\n' % (self.cc, self.egress_t[1][i], self.egress_tput[1][i]))
+                    '%s\tegress\t%.2f\t%.2f\n' % (schemes_config[self.cc]['name'], self.egress_t[1][i], self.egress_tput[1][i]))
             for i in range(len(self.ingress_t[1])):
                 all_tput_log.write(
-                    '%s\tingress\t%.2f\t%.2f\n' % (self.cc, self.ingress_t[1][i], self.ingress_tput[1][i]))
+                    '%s\tingress\t%.2f\t%.2f\n' % (schemes_config[self.cc]['name'], self.ingress_t[1][i], self.ingress_tput[1][i]))
         with open(self.all_delay_log, 'a') as all_delay_log:
             for i in range(len(self.delays_t[1])):
-                all_delay_log.write('%s\t%f\t%.2f\n' % (self.cc, self.delays_t[1][i], self.delays[1][i]))
+                all_delay_log.write('%s\t%f\t%.2f\n' % (schemes_config[self.cc]['name'], self.delays_t[1][i], self.delays[1][i]))
         self.lock.release()
 
     def flip(self, items, ncol):
@@ -298,13 +303,18 @@ class TunnelGraph(object):
 
         if self.link_capacity:
             empty_graph = False
-            ax.fill_between(self.link_capacity_t, 0, self.link_capacity,
+            end_ind = np.argmin(np.abs(np.array(self.link_capacity_t) - self.run_time))
+            ax.fill_between(self.link_capacity_t[:end_ind], 0, self.link_capacity[:end_ind],
                             facecolor='linen')
 
         colors = ['b', 'g', 'r', 'y', 'c', 'm']
         color_i = 0
+
         for flow_id in self.flows:
             color = colors[color_i]
+            start_t = min(self.ingress_t[flow_id][0], self.egress_t[flow_id][0])
+            self.ingress_t[flow_id] = [i - start_t for i in self.ingress_t[flow_id]]
+            self.egress_t[flow_id] = [i - start_t for i in self.egress_t[flow_id]]
 
             if flow_id in self.ingress_tput and flow_id in self.ingress_t:
                 empty_graph = False
@@ -328,20 +338,21 @@ class TunnelGraph(object):
             sys.stderr.write('No valid throughput graph is generated\n')
             return
 
-        ax.set_xlabel('Time (s)', fontsize=12)
-        ax.set_ylabel('Throughput (Mbit/s)', fontsize=12)
+        ax.set_xlabel('Time (s)', fontsize=16)
+        ax.set_ylabel('Throughput (Mbit/s)', fontsize=16)
 
         if self.link_capacity and self.avg_capacity:
             ax.set_title('Average capacity %.2f Mbit/s (shaded region)'
-                         % self.avg_capacity)
+                         % self.avg_capacity, fontsize=16)
 
         ax.grid()
         handles, labels = ax.get_legend_handles_labels()
         lgd = ax.legend(self.flip(handles, 2), self.flip(labels, 2),
                         scatterpoints=1, bbox_to_anchor=(0.5, -0.1),
-                        loc='upper center', ncol=2, fontsize=12)
+                        loc='upper center', ncol=2, fontsize=16)
 
         fig.set_size_inches(12, 6)
+        plt.rc('font', size=FONT_SIZE)
         fig.savefig(self.throughput_graph, bbox_extra_artists=(lgd,),
                     bbox_inches='tight', pad_inches=0.2)
 
@@ -382,20 +393,20 @@ class TunnelGraph(object):
             return
 
         ax.set_xlim(0, int(math.ceil(max_delay)))
-        ax.set_xlabel('Time (s)', fontsize=12)
-        ax.set_ylabel('Per-packet one-way delay (ms)', fontsize=12)
+        ax.set_xlabel('Time (s)', fontsize=16)
+        ax.set_ylabel('Per-packet one-way delay (ms)', fontsize=16)
 
         ax.grid()
         handles, labels = ax.get_legend_handles_labels()
         lgd = ax.legend(self.flip(handles, 3), self.flip(labels, 3),
                         scatterpoints=1, bbox_to_anchor=(0.5, -0.1),
-                        loc='upper center', ncol=3, fontsize=12,
+                        loc='upper center', ncol=3, fontsize=16,
                         markerscale=5, handletextpad=0)
 
         fig.set_size_inches(12, 6)
+        plt.rc('font', size=FONT_SIZE)
         fig.savefig(graph_path, bbox_extra_artists=(lgd,),
                     bbox_inches='tight', pad_inches=0.2)
-
 
 
     def statistics_string(self):
