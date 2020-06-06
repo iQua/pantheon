@@ -14,7 +14,7 @@ def main():
         cmake_src = path.join(conn_src, 'build.sh')
         recv_src = path.join(conn_src, 'connect')
         # designate a trained model here (default path: cc_repo/net-em/.../envs/models/)
-        model_src = 'training_models/model-xentropy-390iter-rw149-retrain-ep153.pt'
+        model_src = 'training_models/retrain-ep459-task6-no_expert.pt'
         
         if args.option == 'setup':
             # build C++ connection program
@@ -23,7 +23,7 @@ def main():
             return
 
         if args.option == 'sender':
-            cmd = ['python3', send_src, args.port, '--return_recent_meas', '--threads=1', '--pg', '--normalized', '--restart_timed_out', '--stop=100', '--model', model_src]
+            cmd = ['python3', send_src, args.port, '--return_recent_meas', '--threads=1', '--pg', '--normalized', '--model', model_src]
             check_call(cmd)
             return
 
