@@ -95,3 +95,15 @@ schemes:
     name: Aurora
     color: black
     marker: '+'
+  dqn:
+    name: DQN
+    color: violet
+    marker: '^'
+  ppo:
+    name: PPO
+    color: black
+    marker: '+'
+  ddpg:
+    name: DDPG
+    color: red
+    marker: 'D'
