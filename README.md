@@ -25,6 +25,8 @@ our handy scripts will install packages and perform some system-wide settings
 (e.g., enabling IP forwarding, loading kernel modeuls) as root.
 Please run at your own risk.
 
+Working schemes are `cubic vegas bbr ledbat pcc scream webrtc vivace pcc_experimental fillp indigo fillp_sheep aurora pareto pareto-online synthesizedBBR pythonBBR pythonBBR-plus`
+
 ## Preparation
 To clone this repository, run:
 
