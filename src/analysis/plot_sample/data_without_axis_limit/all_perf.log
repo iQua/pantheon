@@ -1,5 +1,0 @@
-Scheme(all runs)	Avg throughput (Mbit/s)	Avg 95th delay (ms)	Avg 99th delay (ms)	Avg mean delay (ms)	Avg loss rate
-pcc	3.04	579.75	879.55	99.09	0.002544
-aurora	5.14	1834.88	2150.70	704.37	0.035715
-pareto	0.38	31.20	61.10	24.68	0.000637
-bbr	6.95	219.75	303.55	89.42	0.003761

@@ -9,7 +9,7 @@ import context
 def main():
         args = arg_parser.sender_first()
         cc_repo = path.join(context.third_party_dir, 'eagle-plus')
-	send_src = path.join(cc_repo, 'net-em/net-em/net_em/envs', 'example_xentropy.py')
+	send_src = path.join(cc_repo, 'net-em/net-em/net_em/envs', 'offline_training.py')
         conn_src = path.join(cc_repo, 'net-em/net-em/net_em/envs/connect-Eagle')
         cmake_src = path.join(conn_src, 'build.sh')
         recv_src = path.join(conn_src, 'connect')

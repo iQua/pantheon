@@ -1,3 +1,0 @@
-Scheme	Avg throughput (Mbit/s)	Avg delay (ms)	Avg loss rate
-pythonBBR-plus	44.15	112.23	0.065557
-bbr	47.96	111.23	0.020242
