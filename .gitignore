@@ -5,7 +5,7 @@
 /tmp/
 /runs/
 /src/wrappers/runs/
-
+*.pyc
 ##### Python
 
 # Byte-compiled / optimized / DLL files
